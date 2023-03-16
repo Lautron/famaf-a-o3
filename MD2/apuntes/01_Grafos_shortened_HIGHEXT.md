@@ -1,5 +1,5 @@
 ---
-title: resumen
+title: Resumen filmina 1 MD2
 author: Lautaro Bachmann
 documentclass: scrartcl
 ---
@@ -247,14 +247,120 @@ la complejidad tanto de DFS como de BFS es O(m).
 
 ## Coloreos propios
 
+Un coloreo (de los vértices) es una función cualquiera c : V S donde S es un conjunto ﬁnito.
+
+Un coloreo es propio si xy E c(x) c(y) (extremos con distinto color)
+
+Si la cardinalidad de S es k diremos que el coloreo tiene k colores.
+En general usaremos S = 1, ..., k para denotar los colores.
+
+Un grafo que tiene un coloreo propio con k colores se dice k-coloreable.
+
+
+### número cromático
+
+χ(G) = : un coloreo propio con k colores de
+
+
 ### Calculando χ(G)
+
+Si uno dice que χ(G) = k, por la deﬁnición misma de este número, hay que hacer dos cosas para probarlo:
+
+1 Dar un coloreo propio de G con k colores. (y obviamente probar que es propio).
+
+Esto prueba la parte del un coloreo propio con k colores de G”
+
+2 Probar que no existe ningún coloreo propio con k 1 colores de G.
+
+Esto prueba que k es el mínimo.
+
+
+### ayuda útil para probar [2]
+
+Si H es un subgrafo de G, entonces χ(H) χ(G).
+
+Entonces si encontramos un subgrafo H de G para el cual sepamos que χ(H) = k habremos probado [2].
+
+
+#### prueba por contradicción:\
+se asume que existe un coloreo propio con k 1 colores y deduciendo cosas, se llega a un absurdo.
+
+#### Hay 2 problemas\
+
+1 Llegar al absurdo puede ser bastante diﬁcil, teniendo que contemplar varios casos, pej.
+
+2 Para poder hacer la prueba por contradicción, hay que asumir que existe un coloreo propio con k 1 colores.
+
+Eso signiﬁca que uds. NO TIENEN CONTROL sobre ese coloreo.
+Sólo saben que hay uno, y deben deducir cosas sobre ese coloreo a partir de la estructura del grafo.
+
+
+### χ(G) para algunos grafos
+
+En general, dado que para cualquier grafo G podemos darle un color distinto a todos los vértices, tenemos la desigualdad χ(G) n.
+χ(Kn) = n
+si quieren probar que r χ(G) basta con ver que existe un Kr subgrafo de G.
+χ(G) = 1 si y solo si E = asi que para cualquier grafo que tenga al menos un lado, χ(G) 2.
+χ(C2r) = 2 pues podemos colorear c(i) = (i mod 2)
+con χ(C2r+1)
+pues tendriamos que 2r + 1 y 1 tendrían color 1, absurdo pues forman lado.
+Podemos colorear: c(i) = (i mod 2) si i < 2r + 1 y c(2r + 1) = 2.
+
+los ciclos impares
+tienen número cromático igual a 3.
+
+cualquier grafo que tenga como subgrafo a un ciclo impar debe tener número cromático mayor o igual que 3.
+
 
 ### Algoritmo de fuerza bruta
 
+simplemente tomar todos los coloreos posibles con los colores 1, ..., n y calcular cuales de esos coloreo son propios, y ver de entre esos quien tiene la menor cantidad de colores.
+
+#### Este algoritmo calcula χ(G) pero:\
+
+Hay nn posibles coloreos.
+Chequear que un coloreo es propio es O(m).
+
+el algoritmo tiene complejidad O(nnm) asi que no es útil salvo para n muy chicos.
+
+
 ### Algoritmo Greedy
+
+El algoritmo Greedy requiere como input no sólo un grafo G sino un
+**orden**
+de los vértices.
+
+para extraer el mayor beneﬁcio posible de Greedy conviene poder llamarlo varias veces cambiando el orden.
+
 
 #### Idea de Greedy\
 
+La idea de Greedy consiste de dos partes:
+
+1 Ir coloreando los vértices de G uno por uno, en el orden dado, manteniendo siempre el invariante que el coloreo parcial que se va obteniendo es propio.
+
+2 Darle a cada vértice al momento de colorearlo el menor color posible que se le pueda dar manteniendo el invariante de que el coloreo es propio.
+
+
 #### Greedy\
 
+Input: Grafo G y orden de los vértices x1, x2, ...., xn.
+
+c(x1) = 0
+Para i > 1, asumiendo que los vértices x1, x2, . . . , ya han sido coloreados, colorear xi con:
+
+c(xi) = 0 : k c . . . ,
+
+estamos usando la notación usual de c(A) = : a
+
+Es decir, xi recibe el menor color que sea distinto del color de todos los vecinos anteriores a xi.
+
+
 #### Complejidad de Greedy\
+
+la complejidad de Greedy es O(d(x1) + d(x2) + + d(xn)).
+
+Por el lema del apretón de manos que vieron en Discreta I, la suma de todos los grados es igual a 2m.
+
+Por lo tanto
+la complejidad de Greedy es O(2m) = O(m), polinomial.
