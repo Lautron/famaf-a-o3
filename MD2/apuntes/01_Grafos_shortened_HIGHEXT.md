@@ -1,10 +1,11 @@
 ---
-title: Resumen filmina 1 MD2
+title: Resumen MD2 Filmina 1
 author: Lautaro Bachmann
 documentclass: scrartcl
 ---
 \tableofcontents
 \newpage
+
 
 ## Grafos
 
@@ -20,7 +21,7 @@ En esta materia siempre supondremos V ﬁnito.
 **E**
 es un subconjunto del conjunto de subconjuntos de 2 elementos de V.
 
-es decir E V : =
+es decir E  $\subseteq$  {A  $\subseteq$  V : |A| = 2}
 
 
 ### Notaciones
@@ -38,7 +39,7 @@ es decir E V : =
 #### cantidad de elementos de E,\
 
 
-#### Un elemento E\
+#### Un elemento {x, y}  $\in$  E\
 
 
 ### Subgrafos
@@ -47,25 +48,25 @@ Dado un grafo G = (V, E), un
 **subgrafo**
 de G es un
 **grafo**
-H = (W, F) tal que W V y F E.
+H = (W, F) tal que W  $\subseteq$  V y F  $\subseteq$  E.
 
 Observemos que pedimos que H sea en si mismo un grafo.
-No cualquier par (W, F) con W V y F E será un subgrafo
+No cualquier par (W, F) con W  $\subseteq$  V y F  $\subseteq$  E será un subgrafo
 
 
 ### Vecinos de un vértice
 
-Dado x V,
+Dado x  $\in$  V,
 los vértices que forman un lado con x se llaman los
 **vécinos**
-de x.
+ $\in$  de x.
 
 El conjunto de vécinos se llama el
 
 #### “vecindario”\
 y se denota por Γ(x).
 
-Es decir Γ(x) = V : xy
+Es decir Γ(x) = {y  $\in$  V : xy  $\in$  E}
 
 
 ### Grado de un vértice
@@ -91,8 +92,8 @@ al
 #### mayor de todos los grados\
 por ∆.
 
-δ = : x
-∆ = : x
+δ = Min{d(x) : x  $\in$  V}
+Min{d(x)  $\in$  V} ∆ = Max{d(x) : x  $\in$  V}
 
 Un grafo que tenga δ = ∆ (es decir, todos los grados iguales) se llamará un
 
@@ -107,26 +108,26 @@ o ∆-regular si queremos especiﬁcar el grado común a todos los vértices.
 #### grafo cíclico\
 en n vértices, (n > 3) denotado por Cn, es el grafo:
 
- ..., y lados x2x3, ...,
+{x1, ..., xn} y lados {x1x2, x2x3, ..., xn $-$ 1xn, xnx1}).
 
 
 #### grafo completo\
 en n vértices, denotado por Kn, es el grafo:
 
- ..., y lados : i, j 2, ..., i <
+{x1, ..., xn} y lados {xixj : i, j  $\in$  {1, 2, ..., n}, i < j})
 
 Cn y Kn tienen ambos n vértices,
 pero Cn tiene n lados mientras que Kn tiene
 
-  = lados. 2
+ � = n(n $-$ 1) = n(n $-$ 1) 2 lados. � = n(n $-$ 1) 2
 
 Cn se llaman cíclicos porque su representación gráﬁca es un ciclo de n puntos.
 
-  dCn(x) = 2 para todo vértice de Cn, mientras que dKn(x) = n 1 para todo vértice de Kn.
+  dCn(x) = 2 para todo vértice de Cn, mientras que dKn(x) = n  $-$  1 para todo vértice de Kn.
 
 Por lo tanto ambos son grafos regulares.
 
- es 2-regular y Kn es (n 1)-regular).
+ es 2-regular y Kn es (n  $-$  1)-regular).
 
 
 ### Componentes conexas
@@ -138,9 +139,9 @@ entre 2 vértices x, y es una sucesión de vértices  x1, ..., xr tales que:
 x1 = x
 
 xr = y.
- xixi+1 E 2, ..., r
+ xixi+1  $\in$  E  $\forall$ i  $\in$  {1, 2, ..., r  $-$  1}.
 
-“x y sii existe un camino entre x e y”
+“x  $\sim$  y sii existe un camino entre x e y”
 
 es una relación de equivalencia.
 
@@ -173,7 +174,7 @@ El algoritmo básico de DFS o BFS lo que hace es, dado un vértice x, encontrar 
 
 (abajo en vez de BFS puede usarse DFS)
 
-Tomar W = i = 1.
+Tomar W = ∅, i = 1.
 
 Tomar un vértice cualquiera x de V.
 
@@ -181,11 +182,11 @@ Correr BFS(x).
 
 LLamarle Ci a la componente conexa que encuentra BFS(x).
 
-Hacer W = (vértices de Ci).
+Hacer W = W∪ (vértices de Ci).
 
 Si W = V, return C1, C2, ..., Ci.
 
-Si no, hacer i = i + 1, tomar un vértice x W y repetir [3].
+Si no, hacer i = i + 1, tomar un vértice x $/$  $\in$  W y repetir [3].
 
 
 ## DFS y BFS
@@ -203,7 +204,7 @@ BFS agrega todos los vecinos juntos y usa una cola.
 
 Crear una cola con x como único elemento.
 
-Tomar C = 
+Tomar C = {x}.
 WHILE (la cola no sea vacia)
 
 Tomar p=el primer elemento de la cola.
@@ -221,15 +222,15 @@ return C.
 
 Crear una pila con x como único elemento.
 
-Tomar C = 
+Tomar C = {x}.
 WHILE (la pila no sea vacia)
 
 Tomar p=el primer elemento de la pila.
 IF existe algún vértice de Γ(p) que no esté en C:
 
-Tomar un q Γ(p) C.
-Hacer C = C
-Agregar q a la pila.
+Tomar un q  $\in$  Γ(p)  $-$  C.
+ $\in$   $-$  Hacer C = C ∪ {q}.
+∪ {q}. Agregar q a la pila.
 
 ELSE:
 
@@ -247,19 +248,19 @@ la complejidad tanto de DFS como de BFS es O(m).
 
 ## Coloreos propios
 
-Un coloreo (de los vértices) es una función cualquiera c : V S donde S es un conjunto ﬁnito.
+Un coloreo (de los vértices) es una función cualquiera c : V → S donde S es un conjunto ﬁnito.
 
-Un coloreo es propio si xy E c(x) c(y) (extremos con distinto color)
+Un coloreo es propio si xy  $\in$  E ⇒ c(x) $\neq$  c(y) (extremos con distinto color)
 
 Si la cardinalidad de S es k diremos que el coloreo tiene k colores.
-En general usaremos S = 1, ..., k para denotar los colores.
+En general usaremos S = {0, 1, ..., k  $-$  1} para denotar los colores.
 
 Un grafo que tiene un coloreo propio con k colores se dice k-coloreable.
 
 
 ### número cromático
 
-χ(G) = : un coloreo propio con k colores de
+χ(G) = min{k : ∃ un coloreo propio con k colores de G}
 
 
 ### Calculando χ(G)
@@ -268,39 +269,39 @@ Si uno dice que χ(G) = k, por la deﬁnición misma de este número, hay que ha
 
 1 Dar un coloreo propio de G con k colores. (y obviamente probar que es propio).
 
-Esto prueba la parte del un coloreo propio con k colores de G”
+Esto prueba la parte del “∃ un coloreo propio con k colores de G”
 
-2 Probar que no existe ningún coloreo propio con k 1 colores de G.
+2 Probar que no existe ningún coloreo propio con k  $-$  1 colores de G.
 
 Esto prueba que k es el mínimo.
 
 
 ### ayuda útil para probar [2]
 
-Si H es un subgrafo de G, entonces χ(H) χ(G).
+Si H es un subgrafo de G, entonces χ(H)  $\leq$  χ(G).
 
 Entonces si encontramos un subgrafo H de G para el cual sepamos que χ(H) = k habremos probado [2].
 
 
 #### prueba por contradicción:\
-se asume que existe un coloreo propio con k 1 colores y deduciendo cosas, se llega a un absurdo.
+se asume que existe un coloreo propio con k  $-$  1 colores y deduciendo cosas, se llega a un absurdo.
 
 #### Hay 2 problemas\
 
 1 Llegar al absurdo puede ser bastante diﬁcil, teniendo que contemplar varios casos, pej.
 
-2 Para poder hacer la prueba por contradicción, hay que asumir que existe un coloreo propio con k 1 colores.
+2 Para poder hacer la prueba por contradicción, hay que asumir que existe un coloreo propio con k  $-$  1 colores.
 
-Eso signiﬁca que uds. NO TIENEN CONTROL sobre ese coloreo.
+ $-$  Eso signiﬁca que uds. NO TIENEN CONTROL sobre ese coloreo.
 Sólo saben que hay uno, y deben deducir cosas sobre ese coloreo a partir de la estructura del grafo.
 
 
 ### χ(G) para algunos grafos
 
-En general, dado que para cualquier grafo G podemos darle un color distinto a todos los vértices, tenemos la desigualdad χ(G) n.
+En general, dado que para cualquier grafo G podemos darle un color distinto a todos los vértices, tenemos la desigualdad χ(G)  $\leq$  n.
 χ(Kn) = n
-si quieren probar que r χ(G) basta con ver que existe un Kr subgrafo de G.
-χ(G) = 1 si y solo si E = asi que para cualquier grafo que tenga al menos un lado, χ(G) 2.
+si quieren probar que r  $\leq$  χ(G) basta con ver que existe un Kr subgrafo de G.
+χ(G) = 1 si y solo si E = ∅ asi que para cualquier grafo que tenga al menos un lado, χ(G) ∅  $\geq$  2.
 χ(C2r) = 2 pues podemos colorear c(i) = (i mod 2)
 con χ(C2r+1)
 pues tendriamos que 2r + 1 y 1 tendrían color 1, absurdo pues forman lado.
@@ -314,7 +315,7 @@ cualquier grafo que tenga como subgrafo a un ciclo impar debe tener número crom
 
 ### Algoritmo de fuerza bruta
 
-simplemente tomar todos los coloreos posibles con los colores 1, ..., n y calcular cuales de esos coloreo son propios, y ver de entre esos quien tiene la menor cantidad de colores.
+simplemente tomar todos los coloreos posibles con los colores {0, 1, ..., n  $-$  1} y calcular cuales {0,  $-$  1} de esos coloreo son propios, y ver de entre esos quien tiene la menor cantidad de colores.
 
 #### Este algoritmo calcula χ(G) pero:\
 
@@ -347,18 +348,18 @@ La idea de Greedy consiste de dos partes:
 Input: Grafo G y orden de los vértices x1, x2, ...., xn.
 
 c(x1) = 0
-Para i > 1, asumiendo que los vértices x1, x2, . . . , ya han sido coloreados, colorear xi con:
+Para i > 1, asumiendo que los vértices x1, x2, . . . , xi $-$ 1 ya han sido coloreados, colorear xi con:
 
-c(xi) = 0 : k c . . . ,
+c(xi) = min{k  $\geq$  0 : k  $\notin$  c ({x1, . . . , xi $-$ 1} ∩ Γ(xi))}
 
-estamos usando la notación usual de c(A) = : a
+estamos usando la notación usual de c(A) = {c(a) : a  $\in$  A}.
 
 Es decir, xi recibe el menor color que sea distinto del color de todos los vecinos anteriores a xi.
 
 
 #### Complejidad de Greedy\
 
-la complejidad de Greedy es O(d(x1) + d(x2) + + d(xn)).
+la complejidad de Greedy es O(d(x1) + d(x2) +  $\cdot$   $\cdot$   $\cdot$  + d(xn)).
 
 Por el lema del apretón de manos que vieron en Discreta I, la suma de todos los grados es igual a 2m.
 
