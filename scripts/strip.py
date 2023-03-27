@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import fitz  # pip install pymupdf
 import sys
 
