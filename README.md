@@ -1,6 +1,13 @@
 # famaf-year3
 
 ## Scripts utiles
+### Dependencias necesarias
+1. pandoc: 
+  - Arch: `sudo pacman -S pandoc`
+  - Debian: `sudo apt-get install pandoc`
+
+2. PyMuPDF: `pip3 install pymupdf`
+
 ### Instalacion
 ```bash
 cd scripts && ./install_scripts.sh
