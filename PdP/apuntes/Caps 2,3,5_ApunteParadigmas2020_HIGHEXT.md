@@ -1,11 +1,3 @@
----
-title: Resumen PdP
-author: Lautaro Bachmann
-documentclass: scrartcl
----
-\tableofcontents
-\newpage
-
 # Qué es y qué puede hacer un lenguaje de programación
 
 Un lenguaje de programación es un lenguaje formal dise˜nado para realizar procesos que pueden ser llevados a cabo por máquinas
