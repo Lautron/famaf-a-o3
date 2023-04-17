@@ -1,12 +1,3 @@
----
-title: Resumen MD2 Filmina 1
-author: Lautaro Bachmann
-documentclass: scrartcl
----
-\tableofcontents
-\newpage
-
-
 ## Grafos
 
 
@@ -28,18 +19,29 @@ es decir E  $\subseteq$  {A  $\subseteq$  V : |A| = 2}
 
 
 #### elementos de V\
+se llaman
+**vértices**
+o nodos. Usaremos preferentemente el primer nombre.
 
 
 #### elementos de E\
+se llaman
+**lados**
+o aristas. Usaremos preferentemente el primer nombre.
 
 
 #### cantidad de elementos de V,\
+salvo que digamos otra cosa, se denotará por default como n.
 
 
 #### cantidad de elementos de E,\
+salvo que digamos otra cosa, se denotará por default como m.
 
 
 #### Un elemento {x, y}  $\in$  E\
+será abreviado como xy.
+
+x e y se llamarán los extremos del lado xy.
 
 
 ### Subgrafos
@@ -108,38 +110,49 @@ o ∆-regular si queremos especiﬁcar el grado común a todos los vértices.
 #### grafo cíclico\
 en n vértices, (n > 3) denotado por Cn, es el grafo:
 
-{x1, ..., xn} y lados {x1x2, x2x3, ..., xn $-$ 1xn, xnx1}).
+\
+![11a](./imgs/01_Grafos_shortened/11a.png){ width=250px }
 
 
 #### grafo completo\
 en n vértices, denotado por Kn, es el grafo:
 
-{x1, ..., xn} y lados {xixj : i, j  $\in$  {1, 2, ..., n}, i < j})
+\
+![11b](./imgs/01_Grafos_shortened/11b.png){ width=250px }
 
 Cn y Kn tienen ambos n vértices,
 pero Cn tiene n lados mientras que Kn tiene
 
- � = n(n $-$ 1) = n(n $-$ 1) 2 lados. � = n(n $-$ 1) 2
+\
+![12a](./imgs/01_Grafos_shortened/12a.png){ width=250px }
+
+lados.
 
 Cn se llaman cíclicos porque su representación gráﬁca es un ciclo de n puntos.
 
-  dCn(x) = 2 para todo vértice de Cn, mientras que dKn(x) = n  $-$  1 para todo vértice de Kn.
+\
+![12b](./imgs/01_Grafos_shortened/12b.png){ width=250px }
+\
+![12c](./imgs/01_Grafos_shortened/12c.png){ width=250px }
+
+para todo vértice de Cn, mientras que
+para todo vértice de Kn.
 
 Por lo tanto ambos son grafos regulares.
 
  es 2-regular y Kn es (n  $-$  1)-regular).
 
 
-### Componentes conexas
+### camino
 
-
-#### camino\
-entre 2 vértices x, y es una sucesión de vértices  x1, ..., xr tales que:
-
-x1 = x
-
-xr = y.
- xixi+1  $\in$  E  $\forall$ i  $\in$  {1, 2, ..., r  $-$  1}.
+\
+![13a](./imgs/01_Grafos_shortened/13a.png){ width=250px }
+\
+![13b](./imgs/01_Grafos_shortened/13b.png){ width=250px }
+\
+![13c](./imgs/01_Grafos_shortened/13c.png){ width=250px }
+\
+![13d](./imgs/01_Grafos_shortened/13d.png){ width=250px }
 
 “x  $\sim$  y sii existe un camino entre x e y”
 
@@ -302,9 +315,17 @@ En general, dado que para cualquier grafo G podemos darle un color distinto a to
 χ(Kn) = n
 si quieren probar que r  $\leq$  χ(G) basta con ver que existe un Kr subgrafo de G.
 χ(G) = 1 si y solo si E = ∅ asi que para cualquier grafo que tenga al menos un lado, χ(G) ∅  $\geq$  2.
-χ(C2r) = 2 pues podemos colorear c(i) = (i mod 2)
-con χ(C2r+1)
-pues tendriamos que 2r + 1 y 1 tendrían color 1, absurdo pues forman lado.
+
+\
+![28a](./imgs/01_Grafos_shortened/28a.png){ width=250px }
+
+pues podemos colorear c(i) = (i mod 2)
+
+\
+![28b](./imgs/01_Grafos_shortened/28b.png){ width=250px }
+
+con
+tendriamos que 2r + 1 y 1 tendrían color 1, absurdo pues forman lado.
 Podemos colorear: c(i) = (i mod 2) si i < 2r + 1 y c(2r + 1) = 2.
 
 los ciclos impares
@@ -345,12 +366,22 @@ La idea de Greedy consiste de dos partes:
 
 #### Greedy\
 
-Input: Grafo G y orden de los vértices x1, x2, ...., xn.
+Input: Grafo G y orden de los vértices
 
-c(x1) = 0
-Para i > 1, asumiendo que los vértices x1, x2, . . . , xi $-$ 1 ya han sido coloreados, colorear xi con:
+\
+![34a](./imgs/01_Grafos_shortened/34a.png){ width=250px }
+\
+![34b](./imgs/01_Grafos_shortened/34b.png){ width=250px }
 
-c(xi) = min{k  $\geq$  0 : k  $\notin$  c ({x1, . . . , xi $-$ 1} ∩ Γ(xi))}
+Para i > 1, asumiendo que los vértices
+
+\
+![34c](./imgs/01_Grafos_shortened/34c.png){ width=250px }
+
+ya han sido coloreados, colorear xi con:
+
+\
+![34d](./imgs/01_Grafos_shortened/34d.png){ width=250px }
 
 estamos usando la notación usual de c(A) = {c(a) : a  $\in$  A}.
 
@@ -359,7 +390,10 @@ Es decir, xi recibe el menor color que sea distinto del color de todos los vecin
 
 #### Complejidad de Greedy\
 
-la complejidad de Greedy es O(d(x1) + d(x2) +  $\cdot$   $\cdot$   $\cdot$  + d(xn)).
+la complejidad de Greedy es
+
+\
+![37a](./imgs/01_Grafos_shortened/37a.png){ width=250px }
 
 Por el lema del apretón de manos que vieron en Discreta I, la suma de todos los grados es igual a 2m.
 
