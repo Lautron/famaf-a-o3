@@ -56,7 +56,7 @@ Un Network por niveles es un network tal que el conjunto de vértices esta divid
 \
 ![21a](./imgs/10_Dinic2021S_v2/21a.png){ width=250px }
 
-Es decir,  $-$ → xy  $\in$  E ⇒ ∃i : x  $\in$  Vi, y  $\in$  Vi+1
+Es decir,  $-$ → xy  $\in$  E  $\Rightarrow$   $\exists$ i : x  $\in$  Vi, y  $\in$  Vi+1
 
 
 ## Network auxiliar,
@@ -66,7 +66,7 @@ Es decir,  $-$ → xy  $\in$  E ⇒ ∃i : x  $\in$  Vi, y  $\in$  Vi+1
 \
 ![22a](./imgs/10_Dinic2021S_v2/22a.png){ width=250px }
 
-el conjunto de vértices es V = ∪r i=0Vi, donde los Vi son:
+el conjunto de vértices es V =  $\cup$ r i=0Vi, donde los Vi son:
 
 Sea r = df(s, t) donde df es la función deﬁnida en la prueba de Edmonds-Karp.
 

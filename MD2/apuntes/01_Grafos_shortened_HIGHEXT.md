@@ -83,7 +83,7 @@ y la denotaremos por d(x) (o dG(x)
 en algunos libros se denota usando la letra griega delta:  $\delta$ (x)
 
 
-###  $\delta$  y ∆
+###  $\delta$  y  $\Delta$ 
 
 
 #### El menor de todos los grados\
@@ -92,16 +92,16 @@ y
 al
 
 #### mayor de todos los grados\
-por ∆.
+por  $\Delta$ .
 
  $\delta$  = Min{d(x) : x  $\in$  V}
-Min{d(x)  $\in$  V} ∆ = Max{d(x) : x  $\in$  V}
+Min{d(x)  $\in$  V}  $\Delta$  = Max{d(x) : x  $\in$  V}
 
-Un grafo que tenga  $\delta$  = ∆ (es decir, todos los grados iguales) se llamará un
+Un grafo que tenga  $\delta$  =  $\Delta$  (es decir, todos los grados iguales) se llamará un
 
 #### grafo regular.\
 
-o ∆-regular si queremos especiﬁcar el grado común a todos los vértices.
+o  $\Delta$ -regular si queremos especiﬁcar el grado común a todos los vértices.
 
 
 ### Cíclicos y completos
@@ -187,7 +187,7 @@ El algoritmo básico de DFS o BFS lo que hace es, dado un vértice x, encontrar 
 
 (abajo en vez de BFS puede usarse DFS)
 
-Tomar W = ∅, i = 1.
+Tomar W =  $\varnothing$ , i = 1.
 
 Tomar un vértice cualquiera x de V.
 
@@ -195,7 +195,7 @@ Correr BFS(x).
 
 LLamarle Ci a la componente conexa que encuentra BFS(x).
 
-Hacer W = W∪ (vértices de Ci).
+Hacer W = W $\cup$  (vértices de Ci).
 
 Si W = V, return C1, C2, ..., Ci.
 
@@ -242,8 +242,8 @@ Tomar p=el primer elemento de la pila.
 IF existe algún vértice de  $\Gamma$ (p) que no esté en C:
 
 Tomar un q  $\in$   $\Gamma$ (p)  $-$  C.
- $\in$   $-$  Hacer C = C ∪ {q}.
-∪ {q}. Agregar q a la pila.
+ $\in$   $-$  Hacer C = C  $\cup$  {q}.
+ $\cup$  {q}. Agregar q a la pila.
 
 ELSE:
 
@@ -263,7 +263,7 @@ la complejidad tanto de DFS como de BFS es O(m).
 
 Un coloreo (de los vértices) es una función cualquiera c : V → S donde S es un conjunto ﬁnito.
 
-Un coloreo es propio si xy  $\in$  E ⇒ c(x) $\neq$  c(y) (extremos con distinto color)
+Un coloreo es propio si xy  $\in$  E  $\Rightarrow$  c(x) $\neq$  c(y) (extremos con distinto color)
 
 Si la cardinalidad de S es k diremos que el coloreo tiene k colores.
 En general usaremos S = {0, 1, ..., k  $-$  1} para denotar los colores.
@@ -273,7 +273,7 @@ Un grafo que tiene un coloreo propio con k colores se dice k-coloreable.
 
 ### número cromático
 
- $\chi$ (G) = min{k : ∃ un coloreo propio con k colores de G}
+ $\chi$ (G) = min{k :  $\exists$  un coloreo propio con k colores de G}
 
 
 ### Calculando  $\chi$ (G)
@@ -282,7 +282,7 @@ Si uno dice que  $\chi$ (G) = k, por la deﬁnición misma de este número, hay 
 
 1 Dar un coloreo propio de G con k colores. (y obviamente probar que es propio).
 
-Esto prueba la parte del “∃ un coloreo propio con k colores de G”
+Esto prueba la parte del “ $\exists$  un coloreo propio con k colores de G”
 
 2 Probar que no existe ningún coloreo propio con k  $-$  1 colores de G.
 
@@ -314,7 +314,7 @@ Sólo saben que hay uno, y deben deducir cosas sobre ese coloreo a partir de la 
 En general, dado que para cualquier grafo G podemos darle un color distinto a todos los vértices, tenemos la desigualdad  $\chi$ (G)  $\leq$  n.
  $\chi$ (Kn) = n
 si quieren probar que r  $\leq$   $\chi$ (G) basta con ver que existe un Kr subgrafo de G.
- $\chi$ (G) = 1 si y solo si E = ∅ asi que para cualquier grafo que tenga al menos un lado,  $\chi$ (G) ∅  $\geq$  2.
+ $\chi$ (G) = 1 si y solo si E =  $\varnothing$  asi que para cualquier grafo que tenga al menos un lado,  $\chi$ (G)  $\varnothing$   $\geq$  2.
 
 \
 ![28a](./imgs/01_Grafos_shortened/28a.png){ width=250px }

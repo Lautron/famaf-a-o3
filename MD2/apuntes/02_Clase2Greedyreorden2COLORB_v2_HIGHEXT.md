@@ -1,16 +1,16 @@
 ## Cotas para Greedy
 
- $\chi$ (G)  $\leq$  ∆ + 1
+ $\chi$ (G)  $\leq$   $\Delta$  + 1
 
 
 ## Teorema de Brooks
 
-Si G es conexo, entonces  $\chi$ (G)  $\leq$  ∆, a menos que G sea un ciclo impar o un grafo completo.
+Si G es conexo, entonces  $\chi$ (G)  $\leq$   $\Delta$ , a menos que G sea un ciclo impar o un grafo completo.
 
 
 ### Propiedad
 
-Si G es conexo, entonces existe un ordenamiento de los vértices tal que Greeedy colorea todos los vértices, salvo uno, con ∆ colores o menos.
+Si G es conexo, entonces existe un ordenamiento de los vértices tal que Greeedy colorea todos los vértices, salvo uno, con  $\Delta$  colores o menos.
 
 
 ## VIT
@@ -19,8 +19,8 @@ Si G es conexo, entonces existe un ordenamiento de los vértices tal que Greeedy
 ### Very Important Theorem
 
 Sea G = (V, E) un grafo cuyos vértices estan coloreados con un coloreo propio c con r colores {0, 1, ..., r  $-$  1}.
-{0,  $-$  1}. Sea  $\pi$  una permutación de los números 0, 1, ..., r  $-$  1, es decir,  $-$   $\pi$  : {0, 1, ..., r  $-$  1} �→ {0, 1, ..., r  $-$  1} es una biyección.
-{0, Sea Vi =  $-$  1} �→ {0,  $-$  1} {x  $\in$  V : c(x) = i}, i = 0, 1, ..., r  $-$  1.
+{0,  $-$  1}. Sea  $\pi$  una permutación de los números 0, 1, ..., r  $-$  1, es decir,  $-$   $\pi$  : {0, 1, ..., r  $-$  1} → {0, 1, ..., r  $-$  1} es una biyección.
+{0, Sea Vi =  $-$  1} → {0,  $-$  1} {x  $\in$  V : c(x) = i}, i = 0, 1, ..., r  $-$  1.
 {x  $\in$  i},  $-$  Ordenemos los vértices poniendo primero los vértices de V $\pi$ (0), luego los de V $\pi$ (1),etc, hasta V $\pi$ (r $-$ 1).
 (el orden interno de los vértices dentro de cada V $\pi$ (i) es irrelevante)
 
@@ -44,10 +44,10 @@ Un grafo se dice bipartito si  $\chi$ (G) = 2.
 
 Es decir, si G = (V, E) entonces existen X, Y  $\subseteq$  V tales que:
 
-1 V = X ∪ Y.
-∪ 2 X ∩ Y = ∅
+1 V = X  $\cup$  Y.
+ $\cup$  2 X  $\cap$  Y =  $\varnothing$ 
 
-∩ ∅ 3 wv  $\in$  E ⇒ (w  $\in$  X, v  $\in$  Y) ∨ (w  $\in$  Y, v  $\in$  X)
+ $\cap$   $\varnothing$  3 wv  $\in$  E  $\Rightarrow$  (w  $\in$  X, v  $\in$  Y)  $\lor$  (w  $\in$  Y, v  $\in$  X)
 
 
 ## El problema 2COLOR

@@ -67,13 +67,13 @@ Si P es una propiedad que puede ser verdadera o falsa, [P] denota el número 1 s
 
 Supongamos que tenemos una variable x, y queremos sumar una función f(x) sobre todos los x que satisfagan una propiedad P(x)
 
-podemos simplemente escribir �
-� x f(x)[P(x)]
+podemos simplemente escribir 
+ x f(x)[P(x)]
 
 \
 ![15a](./imgs/03_flujos2021_v2/15a.png){ width=250px }
 
-� o incluso
+ o incluso
 
 \
 ![15b](./imgs/03_flujos2021_v2/15b.png){ width=250px }
@@ -104,7 +104,7 @@ Dada una función g sobre lados y un vértice x, deﬁnimos:
 
 
 ### Deﬁnición
-Dado un network (V, E, c), y un par de vertices s, t  $\in$  V, un  $\in$  ﬂujo de s a t es una función f : E �→ R con las siguientes
+Dado un network (V, E, c), y un par de vertices s, t  $\in$  V, un  $\in$  ﬂujo de s a t es una función f : E → R con las siguientes
 
 ### propiedades:
 

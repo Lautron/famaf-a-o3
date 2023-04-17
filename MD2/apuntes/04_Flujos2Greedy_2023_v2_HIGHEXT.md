@@ -7,7 +7,7 @@ g es una función sobre los lados y A, B  $\subseteq$  V
 \
 ![8a](./imgs/04_Flujos2Greedy_2023_v2/8a.png){ width=250px }
 
-g(A, B) = � x,y[x  $\in$  A][y  $\in$  B][  $-$ → xy  $\in$  E]g(  $-$ → xy )
+g(A, B) =  x,y[x  $\in$  A][y  $\in$  B][  $-$ → xy  $\in$  E]g(  $-$ → xy )
 
 
 ### Propiedad:
