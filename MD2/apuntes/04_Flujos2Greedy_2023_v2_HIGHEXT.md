@@ -70,9 +70,9 @@ Buscar un camino dirigido s = x0, x1, ..., xr = t, con
 \
 ![21d](./imgs/04_Flujos2Greedy_2023_v2/21d.png){ width=250px }
 
-Calcular ε = min{c(  $-$ → xixi+1)  $-$  f(xixi+1)}.
+Calcular  $\epsilon$  = min{c(  $-$ → xixi+1)  $-$  f(xixi+1)}.
 
-Aumentar f a lo largo del camino de 2. en ε, como se explicó antes.
+Aumentar f a lo largo del camino de 2. en  $\epsilon$ , como se explicó antes.
 
 Repetir 2 hasta que no se puedan hallar mas caminos con esas condiciones.
 

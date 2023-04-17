@@ -66,38 +66,38 @@ los vértices que forman un lado con x se llaman los
 El conjunto de vécinos se llama el
 
 #### “vecindario”\
-y se denota por Γ(x).
+y se denota por  $\Gamma$ (x).
 
-Es decir Γ(x) = {y  $\in$  V : xy  $\in$  E}
+Es decir  $\Gamma$ (x) = {y  $\in$  V : xy  $\in$  E}
 
 
 ### Grado de un vértice
 
-La cardinalidad de Γ(x) se llama el
+La cardinalidad de  $\Gamma$ (x) se llama el
 **grado**
 de x,
 y la denotaremos por d(x) (o dG(x)
 
 
 #### WARNING:\
-en algunos libros se denota usando la letra griega delta: δ(x)
+en algunos libros se denota usando la letra griega delta:  $\delta$ (x)
 
 
-### δ y ∆
+###  $\delta$  y ∆
 
 
 #### El menor de todos los grados\
-de un grafo lo denotaremos por δ
+de un grafo lo denotaremos por  $\delta$ 
 y
 al
 
 #### mayor de todos los grados\
 por ∆.
 
-δ = Min{d(x) : x  $\in$  V}
+ $\delta$  = Min{d(x) : x  $\in$  V}
 Min{d(x)  $\in$  V} ∆ = Max{d(x) : x  $\in$  V}
 
-Un grafo que tenga δ = ∆ (es decir, todos los grados iguales) se llamará un
+Un grafo que tenga  $\delta$  = ∆ (es decir, todos los grados iguales) se llamará un
 
 #### grafo regular.\
 
@@ -222,9 +222,9 @@ WHILE (la cola no sea vacia)
 
 Tomar p=el primer elemento de la cola.
 Borrar p de la cola.
-IF existen vértices de Γ(p) que no esten en C:
+IF existen vértices de  $\Gamma$ (p) que no esten en C:
 
-Agregar todos los elementos de Γ(p) que no estén en C a la cola y a C.
+Agregar todos los elementos de  $\Gamma$ (p) que no estén en C a la cola y a C.
 
 ENDWHILE
 
@@ -239,9 +239,9 @@ Tomar C = {x}.
 WHILE (la pila no sea vacia)
 
 Tomar p=el primer elemento de la pila.
-IF existe algún vértice de Γ(p) que no esté en C:
+IF existe algún vértice de  $\Gamma$ (p) que no esté en C:
 
-Tomar un q  $\in$  Γ(p)  $-$  C.
+Tomar un q  $\in$   $\Gamma$ (p)  $-$  C.
  $\in$   $-$  Hacer C = C ∪ {q}.
 ∪ {q}. Agregar q a la pila.
 
@@ -273,12 +273,12 @@ Un grafo que tiene un coloreo propio con k colores se dice k-coloreable.
 
 ### número cromático
 
-χ(G) = min{k : ∃ un coloreo propio con k colores de G}
+ $\chi$ (G) = min{k : ∃ un coloreo propio con k colores de G}
 
 
-### Calculando χ(G)
+### Calculando  $\chi$ (G)
 
-Si uno dice que χ(G) = k, por la deﬁnición misma de este número, hay que hacer dos cosas para probarlo:
+Si uno dice que  $\chi$ (G) = k, por la deﬁnición misma de este número, hay que hacer dos cosas para probarlo:
 
 1 Dar un coloreo propio de G con k colores. (y obviamente probar que es propio).
 
@@ -291,9 +291,9 @@ Esto prueba que k es el mínimo.
 
 ### ayuda útil para probar [2]
 
-Si H es un subgrafo de G, entonces χ(H)  $\leq$  χ(G).
+Si H es un subgrafo de G, entonces  $\chi$ (H)  $\leq$   $\chi$ (G).
 
-Entonces si encontramos un subgrafo H de G para el cual sepamos que χ(H) = k habremos probado [2].
+Entonces si encontramos un subgrafo H de G para el cual sepamos que  $\chi$ (H) = k habremos probado [2].
 
 
 #### prueba por contradicción:\
@@ -309,12 +309,12 @@ se asume que existe un coloreo propio con k  $-$  1 colores y deduciendo cosas, 
 Sólo saben que hay uno, y deben deducir cosas sobre ese coloreo a partir de la estructura del grafo.
 
 
-### χ(G) para algunos grafos
+###  $\chi$ (G) para algunos grafos
 
-En general, dado que para cualquier grafo G podemos darle un color distinto a todos los vértices, tenemos la desigualdad χ(G)  $\leq$  n.
-χ(Kn) = n
-si quieren probar que r  $\leq$  χ(G) basta con ver que existe un Kr subgrafo de G.
-χ(G) = 1 si y solo si E = ∅ asi que para cualquier grafo que tenga al menos un lado, χ(G) ∅  $\geq$  2.
+En general, dado que para cualquier grafo G podemos darle un color distinto a todos los vértices, tenemos la desigualdad  $\chi$ (G)  $\leq$  n.
+ $\chi$ (Kn) = n
+si quieren probar que r  $\leq$   $\chi$ (G) basta con ver que existe un Kr subgrafo de G.
+ $\chi$ (G) = 1 si y solo si E = ∅ asi que para cualquier grafo que tenga al menos un lado,  $\chi$ (G) ∅  $\geq$  2.
 
 \
 ![28a](./imgs/01_Grafos_shortened/28a.png){ width=250px }
@@ -338,7 +338,7 @@ cualquier grafo que tenga como subgrafo a un ciclo impar debe tener número crom
 
 simplemente tomar todos los coloreos posibles con los colores {0, 1, ..., n  $-$  1} y calcular cuales {0,  $-$  1} de esos coloreo son propios, y ver de entre esos quien tiene la menor cantidad de colores.
 
-#### Este algoritmo calcula χ(G) pero:\
+#### Este algoritmo calcula  $\chi$ (G) pero:\
 
 Hay nn posibles coloreos.
 Chequear que un coloreo es propio es O(m).

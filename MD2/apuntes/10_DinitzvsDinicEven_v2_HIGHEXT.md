@@ -17,6 +17,10 @@ Esa información de que es inútil seguir buscando por x
 **no deberiamos perderla**
 y hay que “guardarla” para futuras corridas de DFS.
 La forma que tiene Ever de “guardar”esa información es simplemente borrar x, o bien, si hacemos backtrack desde x a z,
+
+\
+![11a](./imgs/10_DinitzvsDinicEven_v2/11a.png){ width=250px }
+
 borrar el lado  $-$ → zx .
 
 
