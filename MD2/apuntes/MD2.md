@@ -141,7 +141,11 @@ o  $\Delta$ -regular si queremos especiﬁcar el grado común a todos los vérti
 en n vértices, (n > 3) denotado por Cn, es el grafo:
 
 \
-![11a](./imgs/01_Grafos_shortened/11a.png){ width=250px }
+![](./imgs/01_Grafos_shortened/11a.png)
+
+$\{X_{1},...,X_{n}\}\ {\ y}\,|_{\mathrm{ddOS}}\ \{X_{1}X_{2},\,X_{2}X_{3},...,X_{n-1}X_{n},X_{n}X_{1}\}\}).$
+
+
 
 
 #### grafo completo
@@ -150,22 +154,38 @@ en n vértices, (n > 3) denotado por Cn, es el grafo:
 en n vértices, denotado por Kn, es el grafo:
 
 \
-![11b](./imgs/01_Grafos_shortened/11b.png){ width=250px }
+![](./imgs/01_Grafos_shortened/11b.png)
+
+$\{X_{1}\,,\,...,\,X_{n}\}\;y\;|\mathrm{ados}\;\{X_{i}x_{j}\,:\,i,j\in\{\,1\,,\mathbb{Z},\,...,n\}\,,i\,<j\})$
+
+
 
 Cn y Kn tienen ambos n vértices,
 pero Cn tiene n lados mientras que Kn tiene
 
 \
-![12a](./imgs/01_Grafos_shortened/12a.png){ width=250px }
+![](./imgs/01_Grafos_shortened/12a.png)
+
+${\binom{n}{2}}={\frac{n(n,-1)}{2}}$
+
+
 
 lados.
 
 Cn se llaman cíclicos porque su representación gráﬁca es un ciclo de n puntos.
 
 \
-![12b](./imgs/01_Grafos_shortened/12b.png){ width=250px }
+![](./imgs/01_Grafos_shortened/12b.png)
+
+$Q_{C_{n}}(X)=\mathbb{Z}$
+
+
 \
-![12c](./imgs/01_Grafos_shortened/12c.png){ width=250px }
+![](./imgs/01_Grafos_shortened/12c.png)
+
+${\mathcal{A}}_{K_{n}}(X)=n-1$
+
+
 
 para todo vértice de Cn, mientras que
 para todo vértice de Kn.
@@ -179,13 +199,29 @@ es 2-regular y Kn es (n  $-$  1)-regular).
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
 \
-![13a](./imgs/01_Grafos_shortened/13a.png){ width=250px }
+![](./imgs/01_Grafos_shortened/13a.png)
+
+$X_{1},...,X_{r}$
+
+
 \
-![13b](./imgs/01_Grafos_shortened/13b.png){ width=250px }
+![](./imgs/01_Grafos_shortened/13b.png)
+
+$x_{1}=X$
+
+
 \
-![13c](./imgs/01_Grafos_shortened/13c.png){ width=250px }
+![](./imgs/01_Grafos_shortened/13c.png)
+
+$\textstyle x_{r}=y$
+
+
 \
-![13d](./imgs/01_Grafos_shortened/13d.png){ width=250px }
+![](./imgs/01_Grafos_shortened/13d.png)
+
+$x_{i}x_{i+1}\in E\ \forall i\in\{1,2,...,r-1\}$
+
+
 
 “x  $\sim$  y sii existe un camino entre x e y”
 
@@ -375,12 +411,20 @@ si quieren probar que r  $\leq$   $\chi$ (G) basta con ver que existe un Kr subg
 $\chi$ (G) = 1 si y solo si E =  $\varnothing$  asi que para cualquier grafo que tenga al menos un lado,  $\chi$ (G)  $\varnothing$   $\geq$  2.
 
 \
-![28a](./imgs/01_Grafos_shortened/28a.png){ width=250px }
+![](./imgs/01_Grafos_shortened/28a.png)
+
+$\chi(C_{2r})=2$
+
+
 
 pues podemos colorear c(i) = (i mod 2)
 
 \
-![28b](./imgs/01_Grafos_shortened/28b.png){ width=250px }
+![](./imgs/01_Grafos_shortened/28b.png)
+
+$\chi(G_{2r+1})$
+
+
 
 con
 tendriamos que 2r + 1 y 1 tendrían color 1, absurdo pues forman lado.
@@ -435,19 +479,35 @@ La idea de Greedy consiste de dos partes:
 Input: Grafo G y orden de los vértices
 
 \
-![34a](./imgs/01_Grafos_shortened/34a.png){ width=250px }
+![](./imgs/01_Grafos_shortened/34a.png)
+
+$X_{1}\,,\,X_{2},\,\cdots,\,X_{7}.$
+
+
 \
-![34b](./imgs/01_Grafos_shortened/34b.png){ width=250px }
+![](./imgs/01_Grafos_shortened/34b.png)
+
+${\cal{C}}(X_{1})=0$
+
+
 
 Para i > 1, asumiendo que los vértices
 
 \
-![34c](./imgs/01_Grafos_shortened/34c.png){ width=250px }
+![](./imgs/01_Grafos_shortened/34c.png)
+
+$X_{1},\,X_{2},\,\cdot\,\cdot\,\cdot\,\cdot\,,\,X_{I-1}$
+
+
 
 ya han sido coloreados, colorear xi con:
 
 \
-![34d](./imgs/01_Grafos_shortened/34d.png){ width=250px }
+![](./imgs/01_Grafos_shortened/34d.png)
+
+$G(x_{i})=\operatorname*{min}\{K\geq0:K\not\in\,G\left(\{x_{1},\,\ldots\,\cdot x_{i-1}\}\cap\Gamma(x_{i})\right)\}$
+
+
 
 estamos usando la notación usual de c(A) = {c(a) : a  $\in$  A}.
 
@@ -461,7 +521,11 @@ Es decir, xi recibe el menor color que sea distinto del color de todos los vecin
 la complejidad de Greedy es
 
 \
-![37a](./imgs/01_Grafos_shortened/37a.png){ width=250px }
+![](./imgs/01_Grafos_shortened/37a.png)
+
+$O(O(x_{1})+O(x_{2})+\cdot\cdot\cdot+O(x_{n})).$
+
+
 
 Por el lema del apretón de manos que vieron en Discreta I, la suma de todos los grados es igual a 2m.
 
@@ -597,7 +661,11 @@ no es lo mismo (x, y) que (y, x)
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
 
 \
-![8a](./imgs/03_flujos2021_v2/8a.png){ width=250px }
+![](./imgs/03_flujos2021_v2/8a.png)
+
+${\overline{{\chi y}}}.$
+
+
 
 Denotaremos el lado (x, y) como
 
@@ -613,9 +681,17 @@ Pero ahora como podemos tener lados tanto (x, y) como (y, x) deberiamos diferenc
 \
 
 \
-![9a](./imgs/03_flujos2021_v2/9a.png){ width=250px }
+![](./imgs/03_flujos2021_v2/9a.png)
+
+$\begin{array}{l l l}{\Gamma^{+}(x)}&{=}&{\{y\in V|\overline{{{x y}}}\in E\}}\end{array}$
+
+
 \
-![9b](./imgs/03_flujos2021_v2/9b.png){ width=250px }
+![](./imgs/03_flujos2021_v2/9b.png)
+
+$\begin{array}{l l l}{\Gamma^{-}(x)}&{=}&{\{y\in V|{\overline{{y x}}}\in{\cal E}\}}\end{array}$
+
+
 
 
 ## Network
@@ -627,9 +703,17 @@ Pero ahora como podemos tener lados tanto (x, y) como (y, x) deberiamos diferenc
 Un Network es un grafo dirigido con pesos positivos en los lados, es decir, un triple (V, E, c) donde (V, E) es un grafo dirigido y
 
 \
-![11a](./imgs/03_flujos2021_v2/11a.png){ width=250px }
+![](./imgs/03_flujos2021_v2/11a.png)
+
+${\boldsymbol{C}}:E\longmapsto\mathbb{R}_{>0}$
+
+
 \
-![11b](./imgs/03_flujos2021_v2/11b.png){ width=250px }
+![](./imgs/03_flujos2021_v2/11b.png)
+
+$\scriptstyle c(s{\cdot}y)$
+
+
 
 En este contexto,
 se llamará la
@@ -639,7 +723,11 @@ se llamará la
 del lado
 
 \
-![11c](./imgs/03_flujos2021_v2/11c.png){ width=250px }
+![](./imgs/03_flujos2021_v2/11c.png)
+
+${\overline{{\chi y}}}.$
+
+
 
 
 ## Flujos
@@ -659,12 +747,20 @@ Supongamos que tenemos una variable x, y queremos sumar una función f(x) sobre 
 podemos simplemente escribir
 
 \
-![15a](./imgs/03_flujos2021_v2/15a.png){ width=250px }
+![](./imgs/03_flujos2021_v2/15a.png)
+
+$\textstyle\sum_{X}f(X)[P(X)]$
+
+
 
 o incluso
 
 \
-![15b](./imgs/03_flujos2021_v2/15b.png){ width=250px }
+![](./imgs/03_flujos2021_v2/15b.png)
+
+$\sum f(X)[P(X)]$
+
+
 
 si queda claro que sumamos sobre x.
 
@@ -675,7 +771,11 @@ si queda claro que sumamos sobre x.
 Si g es una función deﬁnida en los lados y A y B son subconjuntos de vertices, entonces g(A, B) denotará la suma:
 
 \
-![16a](./imgs/03_flujos2021_v2/16a.png){ width=250px }
+![](./imgs/03_flujos2021_v2/16a.png)
+
+$g(A,B)=\sum_{x,y}[x\in A][y\in B][\overline{{{x y}}}\in E]g(\overline{{{x y}}})$
+
+
 
 
 ### in y out
@@ -688,9 +788,17 @@ outg(x) es todo lo que “sale” de x por medio de g.
 ing(x) es todo lo que “entra” a x por medio de g.
 
 \
-![19a](./imgs/03_flujos2021_v2/19a.png){ width=250px }
+![](./imgs/03_flujos2021_v2/19a.png)
+
+$O U t_{g}(x)=\sum_{y}[y\in\Gamma^{+}(x)]g(\stackrel{\rightharpoonup}{X y})=g(\{x\},\Gamma^{+}(x))$
+
+
 \
-![19b](./imgs/03_flujos2021_v2/19b.png){ width=250px }
+![](./imgs/03_flujos2021_v2/19b.png)
+
+$i n_{g}(x)=\sum_{y}[y\in\Gamma^{-}(x)]{\it g}(\overrightarrow{y x})=g(\Gamma^{-}(x),\{X\})$
+
+
 
 
 ### Deﬁnición
@@ -701,21 +809,33 @@ Dado un network (V, E, c), y un par de vertices s, t  $\in$  V, un  $\in$  ﬂuj
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
 
 \
-![20a](./imgs/03_flujos2021_v2/20a.png){ width=250px }
+![](./imgs/03_flujos2021_v2/20a.png)
+
+$0\le f(\overline{{{\chi y}}})\le G(\overline{{{\chi y}}})\quad\Psi\overline{{{\chi y}}}\in{\cal E}.$
+
+
 
 (“feasability”)
 
 inf(x) = outf(x)  $\forall$ x  $\in$  V  $-$  {s, t}. (“conservación”)
 
 \
-![20b](./imgs/03_flujos2021_v2/20b.png){ width=250px }
+![](./imgs/03_flujos2021_v2/20b.png)
+
+$o u l t(s)\geq i n_{f}(s).$
+
+
 
 (s es productor)
 
 (t es consumidor)
 
 \
-![20c](./imgs/03_flujos2021_v2/20c.png){ width=250px }
+![](./imgs/03_flujos2021_v2/20c.png)
+
+$i m_{f}(t)\geq O U t_{f}(t).$
+
+
 
 
 #### Explicación
@@ -735,17 +855,29 @@ y la cuarta que t es un vértice donde se consumen los bienes pues consume mas d
 En algunos libros en vez de 3) se pide directamente
 
 \
-![22a](./imgs/03_flujos2021_v2/22a.png){ width=250px }
+![](./imgs/03_flujos2021_v2/22a.png)
+
+$i m_{\ell}(s)=0$
+
+
 
 y en vez de 4) se pide
 
 \
-![22b](./imgs/03_flujos2021_v2/22b.png){ width=250px }
+![](./imgs/03_flujos2021_v2/22b.png)
+
+$o u t_{f}(t)=0.$
+
+
 
 en todos los ejemplos que usaremos,
 
 \
-![22c](./imgs/03_flujos2021_v2/22c.png){ width=250px }
+![](./imgs/03_flujos2021_v2/22c.png)
+
+$\Gamma^{-}(s)=\Gamma^{+}(t)=\emptyset$
+
+
 
 s se llama tradicionalmente la “fuente”(source)
 
@@ -764,7 +896,11 @@ Dado un network (V, E, c) el
 de un ﬂujo f de s a t es:
 
 \
-![24a](./imgs/03_flujos2021_v2/24a.png){ width=250px }
+![](./imgs/03_flujos2021_v2/24a.png)
+
+$V(f)=o U t_{f}(s)-i n_{f}(s)$
+
+
 
 el valor de un ﬂujo es la cantidad neta de bienes producidos.
 
@@ -794,7 +930,11 @@ es un ﬂujo f de s a t tal que v(g)  $\leq$  v(f) para todo ﬂujo g de s a t.
 g es una función sobre los lados y A, B  $\subseteq$  V
 
 \
-![8a](./imgs/04_Flujos2Greedy_2023_v2/8a.png){ width=250px }
+![](./imgs/04_Flujos2Greedy_2023_v2/8a.png)
+
+$g(A,B)=\sum_{X,y}[X\in A][{\cal V}\in B][\overline{{{X y}}}\in{\cal E}]g(\overline{{{X y}}})$
+
+
 
 
 ### Propiedad:
@@ -803,7 +943,11 @@ g es una función sobre los lados y A, B  $\subseteq$  V
 Sean f, g funciones sobre los lados tales que
 
 \
-![8b](./imgs/04_Flujos2Greedy_2023_v2/8b.png){ width=250px }
+![](./imgs/04_Flujos2Greedy_2023_v2/8b.png)
+
+$g(\overline{{{\chi V}}})\leq t(\overline{{{\chi V}}})\quad\forall\overline{{{\chi V}}}\in E$
+
+
 
 Entonces
 
@@ -844,19 +988,31 @@ como hay una cantidad ﬁnita de ﬂujos enteros, es claro que existe un ﬂujo 
 <!-- from 04_Flujos2Greedy_2023_v2_HIGHEXT.md -->
 
 \
-![21a](./imgs/04_Flujos2Greedy_2023_v2/21a.png){ width=250px }
+![](./imgs/04_Flujos2Greedy_2023_v2/21a.png)
+
+$f({\overline{{x y}}})=0{\sqrt{x y}}\in E$
+
+
 
 Comenzar con f = 0 (es decir,
 
 Buscar un camino dirigido s = x0, x1, ..., xr = t, con
 
 \
-![21b](./imgs/04_Flujos2Greedy_2023_v2/21b.png){ width=250px }
+![](./imgs/04_Flujos2Greedy_2023_v2/21b.png)
+
+$x_{i}{\overline{{x_{i+1}}}}\in E$
+
+
 
 tal que
 
 \
-![21c](./imgs/04_Flujos2Greedy_2023_v2/21c.png){ width=250px }
+![](./imgs/04_Flujos2Greedy_2023_v2/21c.png)
+
+$f(X_{i}\overline{{{X_{i+1}}}})\,<\,G(X_{i}\overline{{{X_{i+1}}}}^{*})$
+
+
 
 para todo
 $\in$  i = 0, ..., r  $-$  1.
@@ -866,7 +1022,11 @@ $\in$  i = 0, ..., r  $-$  1.
 Calcular
 
 \
-![21d](./imgs/04_Flujos2Greedy_2023_v2/21d.png){ width=250px }
+![](./imgs/04_Flujos2Greedy_2023_v2/21d.png)
+
+$\varepsilon=\operatorname*{min}\{C(x_{i}\overline{{{\chi_{i+1}}}})-f(x_{i}X_{i+1})\}.$
+
+
 
 Aumentar f a lo largo del camino de 2. en  $\epsilon$ , como se explicó antes.
 
@@ -926,24 +1086,40 @@ la complejidad total de Greedy es O(m2).
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
 
 \
-![9a](./imgs/05_FF2023_2_2023_v2/9a.png){ width=250px }
+![](./imgs/05_FF2023_2_2023_v2/9a.png)
+
+$f\bigl(\overline{{{\,x y\,}}}\bigr)\,<\,c\bigl(\overline{{{\,x y\,}}}\bigr)$
+
+
 
 en vez de limitar la busqueda a
 
 \
-![9b](./imgs/05_FF2023_2_2023_v2/9b.png){ width=250px }
+![](./imgs/05_FF2023_2_2023_v2/9b.png)
+
+$y\in\Gamma^{+}(x)$
+
+
 
 con
 
 permiten ademas buscar
 
 \
-![9c](./imgs/05_FF2023_2_2023_v2/9c.png){ width=250px }
+![](./imgs/05_FF2023_2_2023_v2/9c.png)
+
+$y\in\Gamma^{-}(X)$
+
+
 
 con
 
 \
-![9d](./imgs/05_FF2023_2_2023_v2/9d.png){ width=250px }
+![](./imgs/05_FF2023_2_2023_v2/9d.png)
+
+$t{\bigl(}{\overline{{y x}}}{\bigr)}>0$
+
+
 
 
 ### Camino aumentante
@@ -955,12 +1131,20 @@ x0 = s, xr = t.
 Para cada i = 0, ..., r  $-$  1 ocurre una de las dos cosas siguientes:
 
 \
-![10a](./imgs/05_FF2023_2_2023_v2/10a.png){ width=250px }
+![](./imgs/05_FF2023_2_2023_v2/10a.png)
+
+$x_{i}\overline{{{x_{i+1}}}}\in E\;y\;f(x_{i}\overline{{{x_{i+1}}}})<G(x_{i}\overline{{{x_{i+1}}}})$
+
+
 
 1
 
 \
-![10b](./imgs/05_FF2023_2_2023_v2/10b.png){ width=250px }
+![](./imgs/05_FF2023_2_2023_v2/10b.png)
+
+$\chi_{i\mp1}^{\overline{{{\varepsilon}}}\mp1}\chi_{i}\in E\;\ y\;f(\chi_{i\mp1}^{\overline{{{\varepsilon}}}\mp1}\chi_{i})>0.$
+
+
 
 2
 
@@ -983,7 +1167,11 @@ A los lados en 2) los llamaremos “lados de tipo II” o
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
 
 \
-![12a](./imgs/05_FF2023_2_2023_v2/12a.png){ width=250px }
+![](./imgs/05_FF2023_2_2023_v2/12a.png)
+
+$f({\overline{{x y}}})=0{\forall}{\overline{{x y}}}\in E$
+
+
 
 Comenzar con f = 0 (es decir,
 
@@ -992,12 +1180,20 @@ Buscar un f-camino aumentante s = x0, x1, ..., xr = t.
 Deﬁnir  $\epsilon$ i de la siguiente manera:
 
 \
-![12b](./imgs/05_FF2023_2_2023_v2/12b.png){ width=250px }
+![](./imgs/05_FF2023_2_2023_v2/12b.png)
+
+$\varepsilon_{i}=\,c(x_{i}\overline{{{x_{i+1}}}})-\,f(\overline{{{x_{i X}}}}_{i+1})$
+
+
 
 en los lados forward.
 
 \
-![12c](./imgs/05_FF2023_2_2023_v2/12c.png){ width=250px }
+![](./imgs/05_FF2023_2_2023_v2/12c.png)
+
+$\varepsilon_{i}=f(x_{i+1}^{\quad\eta}x_{i})$
+
+
 
 en los lados backward.
 
@@ -1006,12 +1202,20 @@ Calcular  $\epsilon$  = min{ $\epsilon$ i}.
 Cambiar f a lo largo del camino de [2] en  $\epsilon$ , de la siguiente forma:
 
 \
-![12d](./imgs/05_FF2023_2_2023_v2/12d.png){ width=250px }
+![](./imgs/05_FF2023_2_2023_v2/12d.png)
+
+$f(x_{i}\overline{{{x_{i+1}}}})+=\varepsilon$
+
+
 
 en los lados forward.
 
 \
-![12e](./imgs/05_FF2023_2_2023_v2/12e.png){ width=250px }
+![](./imgs/05_FF2023_2_2023_v2/12e.png)
+
+$f(x_{i+1}^{\overline{{{\ldots}}}}X_{i})-\underline{{{\varepsilon}}}$
+
+
 
 en los lados backwards.
 
@@ -1038,7 +1242,11 @@ NO ES polinomial:
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
 
 \
-![44a](./imgs/05_FF2023_2_2023_v2/44a.png){ width=250px }
+![](./imgs/05_FF2023_2_2023_v2/44a.png)
+
+$V(f)=f({\bf S},\overline{{{\bf S}}})-f(\overline{{{\bf S}}},{\bf S})$
+
+
 
 
 #### A
@@ -1147,32 +1355,56 @@ La complejidad del algoritmo de Edmonds-Karp es O(nm2)
 \
 
 \
-![6a](./imgs/09_EK2021complejidad_v2/6a.png){ width=250px }
+![](./imgs/09_EK2021complejidad_v2/6a.png)
+
+$\overline{{\chi y}}$
+
+
 
 Diremos que un llado
 **se vuelve crítico**
 durante la construcción de uno de los ﬂujos intermedios (digamos, fk+1) si para la construcción de
 
 \
-![6b](./imgs/09_EK2021complejidad_v2/6b.png){ width=250px }
+![](./imgs/09_EK2021complejidad_v2/6b.png)
+
+$\textstyle\left.f_{k+1}\right\}$
+
+
 
 pasa una de las dos cosas siguientes:
 
 1 Se usa el lado en forma forward, saturandolo (es decir
 
 \
-![6c](./imgs/09_EK2021complejidad_v2/6c.png){ width=250px }
+![](./imgs/09_EK2021complejidad_v2/6c.png)
+
+$f_{k}({\overline{{x y}}})<c({\overline{{x y}}})$
+
+
 \
-![6d](./imgs/09_EK2021complejidad_v2/6d.png){ width=250px }
+![](./imgs/09_EK2021complejidad_v2/6d.png)
+
+$f_{k+1}({\overline{{x y}}})=G({\overline{{x y}}})$
+
+
 
 pero luego
 
 2 O se usa el lado en forma backward, vaciandolo (es decir
 
 \
-![6e](./imgs/09_EK2021complejidad_v2/6e.png){ width=250px }
+![](./imgs/09_EK2021complejidad_v2/6e.png)
+
+$f_{k}({\overline{{x y}}})>0$
+
+
 \
-![6f](./imgs/09_EK2021complejidad_v2/6f.png){ width=250px }
+![](./imgs/09_EK2021complejidad_v2/6f.png)
+
+$f_{k+1}({\overline{{\chi y}}})=0$
+
+
 
 pero
 
@@ -1196,12 +1428,20 @@ como la longitud del menor f-camino aumentante entre x y z, si es que existe tal
 Dado un vértice x denotamos
 
 \
-![8a](./imgs/09_EK2021complejidad_v2/8a.png){ width=250px }
+![](./imgs/09_EK2021complejidad_v2/8a.png)
+
+$Q_{k}(X)=Q_{t_{k}}(s,X)$
+
+
 
 y
 
 \
-![8b](./imgs/09_EK2021complejidad_v2/8b.png){ width=250px }
+![](./imgs/09_EK2021complejidad_v2/8b.png)
+
+$b_{k}(x)=Q_{\ell_{k}}(x,t).$
+
+
 
 
 #### Es decir,
@@ -1214,9 +1454,17 @@ dk(x) es la longitud del menor fk-camino aumentante entre s y x y bk(x) es la lo
 Dado un ﬂujo f y un vértice x, diremos que un vértice z es un vécino fFF de x si pasa alguna de las siguientes condiciones:
 
 \
-![10a](./imgs/09_EK2021complejidad_v2/10a.png){ width=250px }
+![](./imgs/09_EK2021complejidad_v2/10a.png)
+
+$\overline{{{\chi Z}}}\subseteq E\ y\ f(\overrightarrow{\chi Z})<G(\overrightarrow{\chi Z})\emptyset;$
+
+
 \
-![10b](./imgs/09_EK2021complejidad_v2/10b.png){ width=250px }
+![](./imgs/09_EK2021complejidad_v2/10b.png)
+
+${\overline{{\mathbb{Z}X}}}\in E\cup f({\overline{{\mathbb{Z}X}}})>0.$
+
+
 
 
 ### Observación trivial:
@@ -1229,7 +1477,11 @@ Si z es un fkFF vécino de x, entonces dk(z)  $\leq$  dk(x) + 1
 Las distancias deﬁnidas anteriormente no disminuyen a medida que k crece.
 
 \
-![13a](./imgs/09_EK2021complejidad_v2/13a.png){ width=250px }
+![](./imgs/09_EK2021complejidad_v2/13a.png)
+
+$d_{k}(x)\leq d_{k\pm1}(x)\,y\,b_{k}(x)\leq b_{k\pm1}(X)\forall x$
+
+
 
 Es decir,
 
@@ -1275,7 +1527,11 @@ Llamaremos a un ﬂujo en un network
 si todo camino DIRIGIDO desde s a t tiene al menos un lado
 
 \
-![16a](./imgs/10_Dinic2021S_v2/16a.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/16a.png)
+
+$c(\overline{{x y}})=t(\overline{{x y}})$
+
+
 
 saturado. (es decir con
 
@@ -1307,7 +1563,11 @@ En otras palabras, si cuando queremos usar Greedy en el network, no llegamos a t
 Un Network por niveles es un network tal que el conjunto de vértices esta dividido en subconjuntos Vi (los “niveles”) tales que sólo existen lados entre un nivel y el siguiente.
 
 \
-![21a](./imgs/10_Dinic2021S_v2/21a.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/21a.png)
+
+$x\overline{{{y}}}\in E\Rightarrow\exists i:x\in V_{i},\;y\in V_{i+1}$
+
+
 
 Es decir,
 
@@ -1319,7 +1579,11 @@ Es decir,
 <!-- from 10_Dinic2021S_v2_HIGHEXT.md -->
 
 \
-![22a](./imgs/10_Dinic2021S_v2/22a.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/22a.png)
+
+$V=\textstyle0_{i=0}^{r}V_{i}$
+
+
 
 el conjunto de vértices es
 donde los Vi son:
@@ -1335,7 +1599,11 @@ Observar que entonces V0 = {s}.
 Deﬁnimos Vr = {t}
 
 \
-![23a](./imgs/10_Dinic2021S_v2/23a.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/23a.png)
+
+$\overline{{\chi y}}$
+
+
 
 
 ### Lados y capacidades:
@@ -1346,9 +1614,17 @@ x  $\in$  Vi, y  $\in$  Vi+1
 y:
 
 \
-![23b](./imgs/10_Dinic2021S_v2/23b.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/23b.png)
+
+$\overline{{x y}}$
+
+
 \
-![23c](./imgs/10_Dinic2021S_v2/23c.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/23c.png)
+
+$f({\overline{{\chi y}}})<G({\overline{{\chi y}}})$
+
+
 
 es un lado del network original con
 
@@ -1357,30 +1633,54 @@ es un lado del network original con
 o:
 
 \
-![23d](./imgs/10_Dinic2021S_v2/23d.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/23d.png)
+
+$\overline{{\sqrt{X}}}$
+
+
 \
-![23e](./imgs/10_Dinic2021S_v2/23e.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/23e.png)
+
+$f({\overline{{y x}}})>0$
+
+
 
 es un lado del network original con
 
 2
 
 \
-![23f](./imgs/10_Dinic2021S_v2/23f.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/23f.png)
+
+$\overline{{\chi y}}$
+
+
 
 En el caso de [1], la capacidad de
 en el network
 
 \
-![23g](./imgs/10_Dinic2021S_v2/23g.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/23g.png)
+
+$c({\overline{{x y}}})-f({\overline{{x y}}})$
+
+
 
 auxiliar será
 y en el caso de [2], la
 
 \
-![23h](./imgs/10_Dinic2021S_v2/23h.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/23h.png)
+
+$(I(x)$
+
+
 \
-![23i](./imgs/10_Dinic2021S_v2/23i.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/23i.png)
+
+$\overline{{x y}}$
+
+
 
 capacidad del lado
 en el network auxiliar será
@@ -1412,7 +1712,11 @@ Y si x agrega a z y x está en Vi, entonces z está en Vi+1.
 si z ya está agregado, si bien z no se
 
 \
-![25a](./imgs/10_Dinic2021S_v2/25a.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/25a.png)
+
+$\overline{{\chi z}}$
+
+
 
 vuelve a agregar, el lado
 si se agrega al network auxilir, siempre y cuando la distancia de z a s sea uno mas que la distancia de x a s.
@@ -1424,7 +1728,11 @@ Pero borramos todos los vértices que ya hubieramos incluido en el mismo Vr en e
 Y de ahi en mas no agregamos mas vértices, sólo lados entre vértices de
 
 \
-![26a](./imgs/10_Dinic2021S_v2/26a.png){ width=250px }
+![](./imgs/10_Dinic2021S_v2/26a.png)
+
+$\scriptstyle V_{r-1}$
+
+
 
 y t.
 
@@ -1460,7 +1768,11 @@ y hay que “guardarla” para futuras corridas de DFS.
 La forma que tiene Ever de “guardar”esa información es simplemente borrar x, o bien, si hacemos backtrack desde x a z,
 
 \
-![11a](./imgs/10_DinitzvsDinicEven_v2/11a.png){ width=250px }
+![](./imgs/10_DinitzvsDinicEven_v2/11a.png)
+
+$\overline{{Z\chi}}$
+
+
 
 borrar el lado
 
