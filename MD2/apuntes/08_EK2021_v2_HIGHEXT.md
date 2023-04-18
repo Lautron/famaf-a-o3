@@ -31,7 +31,8 @@ porque no es un nuevo algoritmo, sino que
 es Ford-Fulkerson con la especiﬁcación de usar BFS para la búsqueda.
 
 
-#### buena forma de recordarlo\
+#### buena forma de recordarlo
+\
 es que EK=FF+BFS.
 
 

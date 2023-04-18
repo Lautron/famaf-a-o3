@@ -7,14 +7,10 @@ g es una función sobre los lados y A, B  $\subseteq$  V
 \
 ![8a](./imgs/04_Flujos2Greedy_2023_v2/8a.png){ width=250px }
 
-g(A, B) =  x,y[x  $\in$  A][y  $\in$  B][  $-$ → xy  $\in$  E]g(  $-$ → xy )
-
 
 ### Propiedad:
 
 Sean f, g funciones sobre los lados tales que
-
-g(  $-$ → xy )  $\leq$  f(  $-$ → xy )  $\forall$   $-$ → xy  $\in$  E
 
 \
 ![8b](./imgs/04_Flujos2Greedy_2023_v2/8b.png){ width=250px }
@@ -53,24 +49,27 @@ como hay una cantidad ﬁnita de ﬂujos enteros, es claro que existe un ﬂujo 
 \
 ![21a](./imgs/04_Flujos2Greedy_2023_v2/21a.png){ width=250px }
 
-Comenzar con f = 0 (es decir, f(  $-$ → xy ) = 0 $\forall$   $-$ → xy  $\in$  E).
+Comenzar con f = 0 (es decir,
 
 Buscar un camino dirigido s = x0, x1, ..., xr = t, con
 
 \
 ![21b](./imgs/04_Flujos2Greedy_2023_v2/21b.png){ width=250px }
+
+tal que
+
 \
 ![21c](./imgs/04_Flujos2Greedy_2023_v2/21c.png){ width=250px }
 
-  $-$ → xixi+1  $\in$  E tal que f(  $-$ → xixi+1) < c(  $-$ → xixi+1) para todo
+para todo
  $\in$  i = 0, ..., r  $-$  1.
 
 (llamaremos a un tal camino un camino dirigido “no saturado” .)
 
+Calcular
+
 \
 ![21d](./imgs/04_Flujos2Greedy_2023_v2/21d.png){ width=250px }
-
-Calcular  $\epsilon$  = min{c(  $-$ → xixi+1)  $-$  f(xixi+1)}.
 
 Aumentar f a lo largo del camino de 2. en  $\epsilon$ , como se explicó antes.
 

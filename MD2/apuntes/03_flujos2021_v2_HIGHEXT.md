@@ -7,7 +7,8 @@
 Un Grafo dirigido es un par G = (V, E) donde V es un conjunto cualquiera (ﬁnito para nosotros) y E  $\subseteq$  V  $\times$  V
 
 
-#### diferencia con un grafo no dirigido\
+#### diferencia con un grafo no dirigido
+\
 E  $\subseteq$  V  $\times$  V
 
 ahora los lados son pares ordenados en vez de conjuntos.
@@ -28,7 +29,8 @@ Denotaremos el lado (x, y) como
 Pero ahora como podemos tener lados tanto (x, y) como (y, x) deberiamos diferenciar entre “vécinos hacia adelante” y “vécinos hacia atras”
 
 
-#### Notación:\
+#### Notación:
+\
 
 \
 ![9a](./imgs/03_flujos2021_v2/9a.png){ width=250px }
@@ -62,13 +64,13 @@ del lado
 ### Notación para agilizar lecturas de sumatorias
 
 
-#### P\
+#### P
+\
 Si P es una propiedad que puede ser verdadera o falsa, [P] denota el número 1 si P es verdadera, y 0 si P es falsa.
 
 Supongamos que tenemos una variable x, y queremos sumar una función f(x) sobre todos los x que satisfagan una propiedad P(x)
 
 podemos simplemente escribir 
- x f(x)[P(x)]
 
 \
 ![15a](./imgs/03_flujos2021_v2/15a.png){ width=250px }
@@ -126,7 +128,8 @@ Dado un network (V, E, c), y un par de vertices s, t  $\in$  V, un  $\in$  ﬂuj
 ![20c](./imgs/03_flujos2021_v2/20c.png){ width=250px }
 
 
-#### Explicación\
+#### Explicación
+\
 
 la primera propiedad dice que no vamos a transportar una cantidad negativa de un bien
 
@@ -161,7 +164,8 @@ y t el “resumidero”(sink).
 ### Valor de un ﬂujo
 
 
-#### Deﬁnición\
+#### Deﬁnición
+\
 Dado un network (V, E, c) el
 **valor**
 de un ﬂujo f de s a t es:
@@ -175,12 +179,14 @@ el valor de un ﬂujo es la cantidad neta de bienes producidos.
 ### Flujos maximales
 
 
-#### Deﬁnición\
+#### Deﬁnición
+\
 Dado un network N y vertices s, t,
 **un ﬂujo maximal de s a t**
 (o “Max ﬂow”)
 es un ﬂujo f de s a t tal que v(g)  $\leq$  v(f) para todo ﬂujo g de s a t.
 
-#### Propiedad\
+#### Propiedad
+\
 
 Propiedades 1,2 y 3 implican la 4), y v(f) = inf(t)  $-$  outf(t).

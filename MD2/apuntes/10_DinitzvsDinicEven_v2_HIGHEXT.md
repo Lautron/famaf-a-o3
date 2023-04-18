@@ -21,7 +21,7 @@ La forma que tiene Ever de “guardar”esa información es simplemente borrar x
 \
 ![11a](./imgs/10_DinitzvsDinicEven_v2/11a.png){ width=250px }
 
-borrar el lado  $-$ → zx .
+borrar el lado
 
 
 ## Diferencia entre la version rusa y la occidental de Dinitz

@@ -18,27 +18,32 @@ es decir E  $\subseteq$  {A  $\subseteq$  V : |A| = 2}
 ### Notaciones
 
 
-#### elementos de V\
+#### elementos de V
+\
 se llaman
 **vértices**
 o nodos. Usaremos preferentemente el primer nombre.
 
 
-#### elementos de E\
+#### elementos de E
+\
 se llaman
 **lados**
 o aristas. Usaremos preferentemente el primer nombre.
 
 
-#### cantidad de elementos de V,\
+#### cantidad de elementos de V,
+\
 salvo que digamos otra cosa, se denotará por default como n.
 
 
-#### cantidad de elementos de E,\
+#### cantidad de elementos de E,
+\
 salvo que digamos otra cosa, se denotará por default como m.
 
 
-#### Un elemento {x, y}  $\in$  E\
+#### Un elemento {x, y}  $\in$  E
+\
 será abreviado como xy.
 
 x e y se llamarán los extremos del lado xy.
@@ -65,7 +70,8 @@ los vértices que forman un lado con x se llaman los
 
 El conjunto de vécinos se llama el
 
-#### “vecindario”\
+#### “vecindario”
+\
 y se denota por  $\Gamma$ (x).
 
 Es decir  $\Gamma$ (x) = {y  $\in$  V : xy  $\in$  E}
@@ -79,19 +85,22 @@ de x,
 y la denotaremos por d(x) (o dG(x)
 
 
-#### WARNING:\
+#### WARNING:
+\
 en algunos libros se denota usando la letra griega delta:  $\delta$ (x)
 
 
 ###  $\delta$  y  $\Delta$ 
 
 
-#### El menor de todos los grados\
+#### El menor de todos los grados
+\
 de un grafo lo denotaremos por  $\delta$ 
 y
 al
 
-#### mayor de todos los grados\
+#### mayor de todos los grados
+\
 por  $\Delta$ .
 
  $\delta$  = Min{d(x) : x  $\in$  V}
@@ -99,7 +108,8 @@ Min{d(x)  $\in$  V}  $\Delta$  = Max{d(x) : x  $\in$  V}
 
 Un grafo que tenga  $\delta$  =  $\Delta$  (es decir, todos los grados iguales) se llamará un
 
-#### grafo regular.\
+#### grafo regular.
+\
 
 o  $\Delta$ -regular si queremos especiﬁcar el grado común a todos los vértices.
 
@@ -107,14 +117,16 @@ o  $\Delta$ -regular si queremos especiﬁcar el grado común a todos los vérti
 ### Cíclicos y completos
 
 
-#### grafo cíclico\
+#### grafo cíclico
+\
 en n vértices, (n > 3) denotado por Cn, es el grafo:
 
 \
 ![11a](./imgs/01_Grafos_shortened/11a.png){ width=250px }
 
 
-#### grafo completo\
+#### grafo completo
+\
 en n vértices, denotado por Kn, es el grafo:
 
 \
@@ -159,12 +171,14 @@ Por lo tanto ambos son grafos regulares.
 es una relación de equivalencia.
 
 
-#### Por\
+#### Por
+\
 lo tanto el grafo G se parte en clases de equivalencia de esa relación de equivalencia.
 
 Esas partes se llaman las componentes conexas de G.
 
-#### componentes conexas\
+#### componentes conexas
+\
 
 
 ### Grafos conexos
@@ -174,7 +188,8 @@ Un grafo se dice conexo si tiene una sola componente conexa.
 Cn y Kn son conexos.
 
 
-#### arbol\
+#### arbol
+\
 es un grafo conexo sin ciclos.
 
 
@@ -183,7 +198,8 @@ es un grafo conexo sin ciclos.
 El algoritmo básico de DFS o BFS lo que hace es, dado un vértice x, encontrar todos los vértices de la componente conexa de x.
 
 
-#### algoritmo\
+#### algoritmo
+\
 
 (abajo en vez de BFS puede usarse DFS)
 
@@ -205,7 +221,8 @@ Si no, hacer i = i + 1, tomar un vértice x $/$  $\in$  W y repetir [3].
 ## DFS y BFS
 
 
-#### breve repaso\
+#### breve repaso
+\
 
 a partir de un vértice raiz, los algoritmos van buscando nuevos vértices, buscando vecinos de vértices que ya han sido agregados.
 DFS agrega de a un vécino por vez y usa una pila.
@@ -296,10 +313,12 @@ Si H es un subgrafo de G, entonces  $\chi$ (H)  $\leq$   $\chi$ (G).
 Entonces si encontramos un subgrafo H de G para el cual sepamos que  $\chi$ (H) = k habremos probado [2].
 
 
-#### prueba por contradicción:\
+#### prueba por contradicción:
+\
 se asume que existe un coloreo propio con k  $-$  1 colores y deduciendo cosas, se llega a un absurdo.
 
-#### Hay 2 problemas\
+#### Hay 2 problemas
+\
 
 1 Llegar al absurdo puede ser bastante diﬁcil, teniendo que contemplar varios casos, pej.
 
@@ -338,7 +357,8 @@ cualquier grafo que tenga como subgrafo a un ciclo impar debe tener número crom
 
 simplemente tomar todos los coloreos posibles con los colores {0, 1, ..., n  $-$  1} y calcular cuales {0,  $-$  1} de esos coloreo son propios, y ver de entre esos quien tiene la menor cantidad de colores.
 
-#### Este algoritmo calcula  $\chi$ (G) pero:\
+#### Este algoritmo calcula  $\chi$ (G) pero:
+\
 
 Hay nn posibles coloreos.
 Chequear que un coloreo es propio es O(m).
@@ -355,7 +375,8 @@ de los vértices.
 para extraer el mayor beneﬁcio posible de Greedy conviene poder llamarlo varias veces cambiando el orden.
 
 
-#### Idea de Greedy\
+#### Idea de Greedy
+\
 
 La idea de Greedy consiste de dos partes:
 
@@ -364,7 +385,8 @@ La idea de Greedy consiste de dos partes:
 2 Darle a cada vértice al momento de colorearlo el menor color posible que se le pueda dar manteniendo el invariante de que el coloreo es propio.
 
 
-#### Greedy\
+#### Greedy
+\
 
 Input: Grafo G y orden de los vértices
 
@@ -388,7 +410,8 @@ estamos usando la notación usual de c(A) = {c(a) : a  $\in$  A}.
 Es decir, xi recibe el menor color que sea distinto del color de todos los vecinos anteriores a xi.
 
 
-#### Complejidad de Greedy\
+#### Complejidad de Greedy
+\
 
 la complejidad de Greedy es
 
