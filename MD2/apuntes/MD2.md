@@ -2,7 +2,7 @@
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
 
-### grafo
+## Definicion
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 es un par ordenado G = (V, E) donde
 
@@ -17,11 +17,11 @@ es un subconjunto del conjunto de subconjuntos de 2 elementos de V.
 es decir E  $\subseteq$  {A  $\subseteq$  V : |A| = 2}
 
 
-### Notaciones
+## Notaciones
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
 
-#### elementos de V
+### elementos de V
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 se llaman
@@ -29,7 +29,7 @@ se llaman
 o nodos. Usaremos preferentemente el primer nombre.
 
 
-#### elementos de E
+### elementos de E
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 se llaman
@@ -37,19 +37,19 @@ se llaman
 o aristas. Usaremos preferentemente el primer nombre.
 
 
-#### cantidad de elementos de V,
+### cantidad de elementos de V,
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 salvo que digamos otra cosa, se denotará por default como n.
 
 
-#### cantidad de elementos de E,
+### cantidad de elementos de E,
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 salvo que digamos otra cosa, se denotará por default como m.
 
 
-#### Un elemento {x, y}  $\in$  E
+### Un elemento {x, y}  $\in$  E
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 será abreviado como xy.
@@ -57,7 +57,7 @@ será abreviado como xy.
 x e y se llamarán los extremos del lado xy.
 
 
-### Subgrafos
+## Subgrafos
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
 Dado un grafo G = (V, E), un
@@ -70,7 +70,7 @@ Observemos que pedimos que H sea en si mismo un grafo.
 No cualquier par (W, F) con W  $\subseteq$  V y F  $\subseteq$  E será un subgrafo
 
 
-### Vecinos de un vértice
+## Vecinos de un vértice
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
 Dado x  $\in$  V,
@@ -80,7 +80,7 @@ $\in$  de x.
 
 El conjunto de vécinos se llama el
 
-#### “vecindario”
+### “vecindario”
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 y se denota por  $\Gamma$ (x).
@@ -88,208 +88,182 @@ y se denota por  $\Gamma$ (x).
 Es decir  $\Gamma$ (x) = {y  $\in$  V : xy  $\in$  E}
 
 
-### Grado de un vértice
+## Grado de un vértice
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
+### Definicion
 La cardinalidad de  $\Gamma$ (x) se llama el
 **grado**
 de x,
-y la denotaremos por d(x) (o dG(x)
+y la denotaremos por d(x) (o $d_G(x)$)
 
 
-#### WARNING:
+### WARNING:
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 en algunos libros se denota usando la letra griega delta:  $\delta$ (x)
 
-
-###  $\delta$  y  $\Delta$
-<!-- from 01_Grafos_shortened_HIGHEXT.md -->
-
-
-#### El menor de todos los grados
+### El menor de todos los grados
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 de un grafo lo denotaremos por  $\delta$
-y
-al
-
-#### mayor de todos los grados
-<!-- from 01_Grafos_shortened_HIGHEXT.md -->
-\
-por  $\Delta$ .
 
 $\delta$  = Min{d(x) : x  $\in$  V}
-Min{d(x)  $\in$  V}  $\Delta$  = Max{d(x) : x  $\in$  V}
 
-Un grafo que tenga  $\delta$  =  $\Delta$  (es decir, todos los grados iguales) se llamará un
-
-#### grafo regular.
+### mayor de todos los grados
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
+de un grafo lo denotaremos por
+por  $\Delta$ .
+
+Min{d(x)  $\in$  V}  $\Delta$  = Max{d(x) : x  $\in$  V}
+
+
+### grafo regular.
+<!-- from 01_Grafos_shortened_HIGHEXT.md -->
+\
+Un grafo que tenga  $\delta$  =  $\Delta$  (es decir, todos los grados iguales) se llamará un grafo regular
 
 o  $\Delta$ -regular si queremos especiﬁcar el grado común a todos los vértices.
 
 
-### Cíclicos y completos
+## Cíclicos y completos
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
 
-#### grafo cíclico
+### grafo cíclico
+#### Definicion
+\
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
-en n vértices, (n > 3) denotado por Cn, es el grafo:
+en n vértices, (n > 3) denotado por $C_n$, es el grafo:
 
+$\{X_{1},...,X_{n}\}$ y lados $\{X_{1}X_{2},\,X_{2}X_{3},...,X_{n-1}X_{n},X_{n}X_{1}\}\}).$
+
+#### Vertices
 \
-![](./imgs/01_Grafos_shortened/11a.png)
+Tiene n vertices
 
-$\{X_{1},...,X_{n}\}\ {\ y}\,|_{\mathrm{ddOS}}\ \{X_{1}X_{2},\,X_{2}X_{3},...,X_{n-1}X_{n},X_{n}X_{1}\}\}).$
+#### Lados
+\
+Tiene n lados
+
+#### Grado
+\
+$d_{C_{n}}(X)=2$
+para todo vértice de $C_{n}$
+
+Es 2-regular
+
+#### Origen del nombre
+\
+
+$C_{n}$ se llaman cíclicos porque su representación gráﬁca es un ciclo de n puntos.
 
 
-
-
-#### grafo completo
+### grafo completo
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
-en n vértices, denotado por Kn, es el grafo:
 
+#### Definicion
 \
-![](./imgs/01_Grafos_shortened/11b.png)
+en n vértices, denotado por $K_{n}$ , es el grafo:
 
-$\{X_{1}\,,\,...,\,X_{n}\}\;y\;|\mathrm{ados}\;\{X_{i}x_{j}\,:\,i,j\in\{\,1\,,\mathbb{Z},\,...,n\}\,,i\,<j\})$
+$\{X_{1}\,,\,...,\,X_{n}\}$ y lados $\{X_{i}X_{j}\,:\,i,j\in\{\,1\,,2,\,...,n\}\,,i\,<j\})$
 
-
-
-Cn y Kn tienen ambos n vértices,
-pero Cn tiene n lados mientras que Kn tiene
-
+#### Vertices
 \
-![](./imgs/01_Grafos_shortened/12a.png)
+Tiene n vertices
 
-${\binom{n}{2}}={\frac{n(n,-1)}{2}}$
-
-
-
+#### Lados
+\
+Tiene 
+${\binom{n}{2}}={\frac{n(n-1)}{2}}$
 lados.
 
-Cn se llaman cíclicos porque su representación gráﬁca es un ciclo de n puntos.
-
+#### Grado
 \
-![](./imgs/01_Grafos_shortened/12b.png)
-
-$Q_{C_{n}}(X)=\mathbb{Z}$
-
-
-\
-![](./imgs/01_Grafos_shortened/12c.png)
-
-${\mathcal{A}}_{K_{n}}(X)=n-1$
+${d}_{K_{n}}(X)=n-1$
+para todo vértice de $K_{n}$
 
 
 
-para todo vértice de Cn, mientras que
-para todo vértice de Kn.
 
 Por lo tanto ambos son grafos regulares.
 
-es 2-regular y Kn es (n  $-$  1)-regular).
+Es $(n-1)$-regular
 
 
-### camino
+## camino
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
-\
-![](./imgs/01_Grafos_shortened/13a.png)
-
+### Definicion
+Un camino entre 2 vertices x,y es una sucesion de vertices
 $X_{1},...,X_{r}$
+tales que:
 
+1. $x_{1}=X$
+2. $\textstyle x_{r}=y$
+3. $x_{i}x_{i+1}\in E\ \forall i\in\{1,2,...,r-1\}$
 
-\
-![](./imgs/01_Grafos_shortened/13b.png)
+### Notacion
+x  $\sim$  y 
 
-$x_{1}=X$
+sii existe un camino entre x e y
 
+### Componentes conexas
+"$\sim$" es una relación de equivalencia.
 
-\
-![](./imgs/01_Grafos_shortened/13c.png)
-
-$\textstyle x_{r}=y$
-
-
-\
-![](./imgs/01_Grafos_shortened/13d.png)
-
-$x_{i}x_{i+1}\in E\ \forall i\in\{1,2,...,r-1\}$
-
-
-
-“x  $\sim$  y sii existe un camino entre x e y”
-
-es una relación de equivalencia.
-
-
-#### Por
-<!-- from 01_Grafos_shortened_HIGHEXT.md -->
-\
-lo tanto el grafo G se parte en clases de equivalencia de esa relación de equivalencia.
+por lo tanto el grafo G se parte en clases de equivalencia de esa relación de equivalencia.
 
 Esas partes se llaman las componentes conexas de G.
 
-#### componentes conexas
-<!-- from 01_Grafos_shortened_HIGHEXT.md -->
-\
-
-
-### Grafos conexos
+## Grafos conexos
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
 Un grafo se dice conexo si tiene una sola componente conexa.
 
-Cn y Kn son conexos.
+$C_{n}$ y $K_{n}$ son conexos.
 
 
-#### arbol
+### arbol
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 es un grafo conexo sin ciclos.
 
 
-### Determinación de las componentes conexas
+## Determinación de las componentes conexas
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
 El algoritmo básico de DFS o BFS lo que hace es, dado un vértice x, encontrar todos los vértices de la componente conexa de x.
 
 
-#### algoritmo
+### algoritmo
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 
 (abajo en vez de BFS puede usarse DFS)
 
-Tomar W =  $\varnothing$ , i = 1.
-
-Tomar un vértice cualquiera x de V.
-
-Correr BFS(x).
-
-LLamarle Ci a la componente conexa que encuentra BFS(x).
-
-Hacer W = W $\cup$  (vértices de Ci).
-
-Si W = V, return C1, C2, ..., Ci.
-
-Si no, hacer i = i + 1, tomar un vértice x $/$  $\in$  W y repetir [3].
+#. Tomar W =  $\varnothing$ , i = 1.
+#. Tomar un vértice cualquiera x de V.
+#. Correr BFS(x).
+#. LLamarle Ci a la componente conexa que encuentra BFS(x).
+#. Hacer W = W $\cup$  (vértices de Ci).
+#. Si W = V, return C1, C2, ..., Ci.
+#. Si no, hacer i = i + 1, tomar un vértice x $\notin$  W y repetir [3].
 
 
 ## DFS y BFS
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
 
-#### breve repaso
+### breve repaso
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 
 a partir de un vértice raiz, los algoritmos van buscando nuevos vértices, buscando vecinos de vértices que ya han sido agregados.
+
+### Diferencia
 DFS agrega de a un vécino por vez y usa una pila.
 
 BFS agrega todos los vecinos juntos y usa una cola.
@@ -298,44 +272,36 @@ BFS agrega todos los vecinos juntos y usa una cola.
 ### BFS(x):
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
-Crear una cola con x como único elemento.
-
-Tomar C = {x}.
-WHILE (la cola no sea vacia)
-
-Tomar p=el primer elemento de la cola.
-Borrar p de la cola.
-IF existen vértices de  $\Gamma$ (p) que no esten en C:
-
-Agregar todos los elementos de  $\Gamma$ (p) que no estén en C a la cola y a C.
-
-ENDWHILE
-
-return C.
+\begin{tabular}{ l l l }
+& Crear una cola con x como único elemento.\\
+& Tomar C = {x}.\\
+& WHILE (la cola no sea vacia)\\
+& \quad \quad Tomar p=el primer elemento de la cola.\\
+& \quad \quad Borrar p de la cola.\\
+& \quad \quad IF existen vértices de\quad $\Gamma$ (p) que no esten en C:\\
+& \quad \quad \quad \quad Agregar todos los elementos de\quad $\Gamma$ (p) que no estén en C a la cola y a C.\\
+& ENDWHILE\\
+& return C.\\
+\end{tabular}
 
 
 ### DFS(x):
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
-Crear una pila con x como único elemento.
-
-Tomar C = {x}.
-WHILE (la pila no sea vacia)
-
-Tomar p=el primer elemento de la pila.
-IF existe algún vértice de  $\Gamma$ (p) que no esté en C:
-
-Tomar un q  $\in$   $\Gamma$ (p)  $-$  C.
-$\in$   $-$  Hacer C = C  $\cup$  {q}.
-$\cup$  {q}. Agregar q a la pila.
-
-ELSE:
-
-Borrar p de la pila.
-
-ENDWHILE
-
-return C.
+\begin{tabular}{ l l l }
+& Crear una pila con x como único elemento.\\
+& Tomar C = {x}.\\
+& WHILE (la pila no sea vacia)\\
+& \quad \quad Tomar p=el primer elemento de la pila.\\
+& \quad \quad IF existe algún vértice de\quad $\Gamma$ (p) que no esté en C:\\
+& \quad \quad \quad \quad Tomar un q\quad $\in$\quad  $\Gamma$ (p)\quad $-$\quad C.\\
+& \quad \quad \quad \quad $\in$\quad  $-$\quad Hacer C = C\quad $\cup$\quad {q}.\\
+& \quad \quad \quad \quad $\cup$\quad {q}. Agregar q a la pila.\\
+& \quad \quad ELSE:\\
+& \quad \quad \quad \quad Borrar p de la pila.\\
+& ENDWHILE\\
+& return C.\\
+\end{tabular}
 
 
 ### Complejidad
@@ -346,13 +312,16 @@ la complejidad tanto de DFS como de BFS es O(m).
 
 ## Coloreos propios
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
-
+### Coloreo
 Un coloreo (de los vértices) es una función cualquiera c : V → S donde S es un conjunto ﬁnito.
 
-Un coloreo es propio si xy  $\in$  E  $\Rightarrow$  c(x) $\neq$  c(y) (extremos con distinto color)
 
+### Cantidad de colores
 Si la cardinalidad de S es k diremos que el coloreo tiene k colores.
 En general usaremos S = {0, 1, ..., k  $-$  1} para denotar los colores.
+
+### Coloreo propio
+Un coloreo es propio si xy  $\in$  E  $\Rightarrow$  c(x) $\neq$  c(y) (extremos con distinto color)
 
 Un grafo que tiene un coloreo propio con k colores se dice k-coloreable.
 
@@ -368,21 +337,20 @@ $\chi$ (G) = min{k :  $\exists$  un coloreo propio con k colores de G}
 
 Si uno dice que  $\chi$ (G) = k, por la deﬁnición misma de este número, hay que hacer dos cosas para probarlo:
 
-1 Dar un coloreo propio de G con k colores. (y obviamente probar que es propio).
-
-Esto prueba la parte del “ $\exists$  un coloreo propio con k colores de G”
-
-2 Probar que no existe ningún coloreo propio con k  $-$  1 colores de G.
-
-Esto prueba que k es el mínimo.
+1. Dar un coloreo propio de G con k colores. (y obviamente probar que es propio).
+    - Esto prueba la parte del “ $\exists$  un coloreo propio con k colores de G”
+\
+2. Probar que no existe ningún coloreo propio con k  $-$  1 colores de G.
+    - Esto prueba que k es el mínimo.
 
 
-### ayuda útil para probar [2]
+### probar que no existe ningun coloreo propio con k-1 colores
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
+#### Propiedad util
 Si H es un subgrafo de G, entonces  $\chi$ (H)  $\leq$   $\chi$ (G).
 
-Entonces si encontramos un subgrafo H de G para el cual sepamos que  $\chi$ (H) = k habremos probado [2].
+Entonces si encontramos un subgrafo H de G para el cual sepamos que  $\chi$ (H) = k habremos probado que no existe ningun colore propio con k-1 colores
 
 
 #### prueba por contradicción:
@@ -390,48 +358,44 @@ Entonces si encontramos un subgrafo H de G para el cual sepamos que  $\chi$ (H) 
 \
 se asume que existe un coloreo propio con k  $-$  1 colores y deduciendo cosas, se llega a un absurdo.
 
-#### Hay 2 problemas
-<!-- from 01_Grafos_shortened_HIGHEXT.md -->
-\
+Hay 2 problemas
 
-1 Llegar al absurdo puede ser bastante diﬁcil, teniendo que contemplar varios casos, pej.
-
-2 Para poder hacer la prueba por contradicción, hay que asumir que existe un coloreo propio con k  $-$  1 colores.
-
-$-$  Eso signiﬁca que uds. NO TIENEN CONTROL sobre ese coloreo.
-Sólo saben que hay uno, y deben deducir cosas sobre ese coloreo a partir de la estructura del grafo.
+1. Llegar al absurdo puede ser bastante diﬁcil, teniendo que contemplar varios casos, pej.
+2. Para poder hacer la prueba por contradicción, hay que asumir que existe un coloreo propio con k  $-$  1 colores.
+    - Eso signiﬁca que uds. NO TIENEN CONTROL sobre ese coloreo.
+    - Sólo saben que hay uno, y deben deducir cosas sobre ese coloreo a partir de la estructura del grafo.
 
 
 ###  $\chi$ (G) para algunos grafos
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 
-En general, dado que para cualquier grafo G podemos darle un color distinto a todos los vértices, tenemos la desigualdad  $\chi$ (G)  $\leq$  n.
-$\chi$ (Kn) = n
-si quieren probar que r  $\leq$   $\chi$ (G) basta con ver que existe un Kr subgrafo de G.
-$\chi$ (G) = 1 si y solo si E =  $\varnothing$  asi que para cualquier grafo que tenga al menos un lado,  $\chi$ (G)  $\varnothing$   $\geq$  2.
-
+#### Valor "maximo" para el numero cromatico
 \
-![](./imgs/01_Grafos_shortened/28a.png)
+En general, dado que para cualquier grafo G podemos darle un color distinto a todos los vértices, tenemos la desigualdad  $\chi$ (G)  $\leq$  n.
 
-$\chi(C_{2r})=2$
+#### Grafo completo
+\
+$\chi$ ($K_{n}$) = n
 
+si quieren probar que r  $\leq$   $\chi$ (G) basta con ver que existe un $K_{r}$ subgrafo de G.
 
+#### Grafos con mas de un lado
+\
+$\chi$ (G) = 1 si y solo si E =  $\varnothing$  asi que para cualquier grafo que tenga al menos un lado,  
 
+$\chi$ (G)$\geq$  2.
+
+#### $\chi(C_{2r})=2$
+\
 pues podemos colorear c(i) = (i mod 2)
 
-\
-![](./imgs/01_Grafos_shortened/28b.png)
-
-$\chi(G_{2r+1})$
-
-
-
-con
+#### Ciclos impares
+Si tenemos en cuenta a $\chi(C_{2r+1})$
 tendriamos que 2r + 1 y 1 tendrían color 1, absurdo pues forman lado.
+
 Podemos colorear: c(i) = (i mod 2) si i < 2r + 1 y c(2r + 1) = 2.
 
-los ciclos impares
-tienen número cromático igual a 3.
+Por lo tanto, los ciclos impares tienen número cromático igual a 3.
 
 cualquier grafo que tenga como subgrafo a un ciclo impar debe tener número cromático mayor o igual que 3.
 
@@ -445,10 +409,10 @@ simplemente tomar todos los coloreos posibles con los colores {0, 1, ..., n  $-$
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 
-Hay nn posibles coloreos.
+Hay $n^{n}$ posibles coloreos.
 Chequear que un coloreo es propio es O(m).
 
-el algoritmo tiene complejidad O(nnm) asi que no es útil salvo para n muy chicos.
+el algoritmo tiene complejidad O($n^n$m) asi que no es útil salvo para n muy chicos.
 
 
 ### Algoritmo Greedy
@@ -467,51 +431,26 @@ para extraer el mayor beneﬁcio posible de Greedy conviene poder llamarlo varia
 
 La idea de Greedy consiste de dos partes:
 
-1 Ir coloreando los vértices de G uno por uno, en el orden dado, manteniendo siempre el invariante que el coloreo parcial que se va obteniendo es propio.
+1. Ir coloreando los vértices de G uno por uno, en el orden dado, manteniendo siempre el invariante que el coloreo parcial que se va obteniendo es propio.
 
-2 Darle a cada vértice al momento de colorearlo el menor color posible que se le pueda dar manteniendo el invariante de que el coloreo es propio.
+2. Darle a cada vértice al momento de colorearlo el menor color posible que se le pueda dar manteniendo el invariante de que el coloreo es propio.
 
 
 #### Greedy
 <!-- from 01_Grafos_shortened_HIGHEXT.md -->
 \
 
-Input: Grafo G y orden de los vértices
+Input: Grafo G y orden de los vértices $X_{1}\,,\,X_{2},\,\cdots,\,X_{7}.$
 
-\
-![](./imgs/01_Grafos_shortened/34a.png)
+- $c(X_{1})=0$
+- Para i > 1, asumiendo que los vértices $X_{1},\,X_{2},\,\cdot\,\cdot\,\cdot\,\cdot\,,\,X_{i-1}$ ya han sido coloreados, colorear $x_{i}$ con:
+    - $c(x_{i})=\operatorname*{min}\{K\geq0:K\not\in\,c\left(\{x_{1},\,\ldots\,\cdot x_{i-1}\}\cap\Gamma(x_{i})\right)\}$
 
-$X_{1}\,,\,X_{2},\,\cdots,\,X_{7}.$
-
-
-\
-![](./imgs/01_Grafos_shortened/34b.png)
-
-${\cal{C}}(X_{1})=0$
-
-
-
-Para i > 1, asumiendo que los vértices
-
-\
-![](./imgs/01_Grafos_shortened/34c.png)
-
-$X_{1},\,X_{2},\,\cdot\,\cdot\,\cdot\,\cdot\,,\,X_{I-1}$
-
-
-
-ya han sido coloreados, colorear xi con:
-
-\
-![](./imgs/01_Grafos_shortened/34d.png)
-
-$G(x_{i})=\operatorname*{min}\{K\geq0:K\not\in\,G\left(\{x_{1},\,\ldots\,\cdot x_{i-1}\}\cap\Gamma(x_{i})\right)\}$
-
-
+**Comentario: **
 
 estamos usando la notación usual de c(A) = {c(a) : a  $\in$  A}.
 
-Es decir, xi recibe el menor color que sea distinto del color de todos los vecinos anteriores a xi.
+Es decir, $x_{i}$ recibe el menor color que sea distinto del color de todos los vecinos anteriores a $x_{i}$
 
 
 #### Complejidad de Greedy
@@ -519,17 +458,14 @@ Es decir, xi recibe el menor color que sea distinto del color de todos los vecin
 \
 
 la complejidad de Greedy es
-
-\
-![](./imgs/01_Grafos_shortened/37a.png)
-
-$O(O(x_{1})+O(x_{2})+\cdot\cdot\cdot+O(x_{n})).$
+$O( d(x_{1})+d(x_{2})+\cdot\cdot\cdot+d(x_{n})).$
 
 
 
 Por el lema del apretón de manos que vieron en Discreta I, la suma de todos los grados es igual a 2m.
 
-Por lo tanto
+Por lo tanto la complejidad de greedy es O(2m) = O(m), osea, es polinomial
+
 ## Cotas para Greedy
 <!-- from 02_Clase2Greedyreorden2COLORB_v2_HIGHEXT.md -->
 
