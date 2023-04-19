@@ -661,13 +661,26 @@ $\sum f(x)[P(x)]$
 si queda claro que sumamos sobre x.
 
 
-### Notación para funciones sobre lados
+### Funciones sobre lados
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
 
+#### Notacion
 Si g es una función deﬁnida en los lados y A y B son subconjuntos de vertices, entonces g(A, B) denotará la suma:
 
 $$g(A,B)=\sum_{x,y}[x\in A][y\in B][\overline{{{x y}}}\in E]g(\overline{{{x y}}})$$
 
+
+
+#### Propiedad:
+<!-- from 04_Flujos2Greedy_2023_v2_HIGHEXT.md -->
+\
+
+Sean f, g funciones sobre los lados tales que
+$g(\overline{{{x y}}})\leq f(\overline{{{x y}}})\quad\forall\overline{{{x y}}}\in E$
+
+Entonces
+
+g(A, B)  $\leq$  f(A, B)  $\forall$ A, B  $\subseteq$  V
 
 
 
@@ -772,36 +785,6 @@ Propiedades 1,2 y 3 implican la 4), y $v(f) = in_f(t) - out_f(t)$
 # Flujos: Greedy.
 <!-- from 04_Flujos2Greedy_2023_v2_HIGHEXT.md -->
 
-## notación g(A, B)
-<!-- from 04_Flujos2Greedy_2023_v2_HIGHEXT.md -->
-
-g es una función sobre los lados y A, B  $\subseteq$  V
-
-\
-![](./imgs/04_Flujos2Greedy_2023_v2/8a.png)
-
-$g(A,B)=\sum_{X,y}[X\in A][{\cal V}\in B][\overline{{{X y}}}\in{\cal E}]g(\overline{{{X y}}})$
-
-
-
-
-### Propiedad:
-<!-- from 04_Flujos2Greedy_2023_v2_HIGHEXT.md -->
-
-Sean f, g funciones sobre los lados tales que
-
-\
-![](./imgs/04_Flujos2Greedy_2023_v2/8b.png)
-
-$g(\overline{{{\chi V}}})\leq t(\overline{{{\chi V}}})\quad\forall\overline{{{\chi V}}}\in E$
-
-
-
-Entonces
-
-g(A, B)  $\leq$  f(A, B)  $\forall$ A, B  $\subseteq$  V
-
-
 ## Criterio simple para maximalidad
 <!-- from 04_Flujos2Greedy_2023_v2_HIGHEXT.md -->
 
@@ -835,50 +818,18 @@ como hay una cantidad ﬁnita de ﬂujos enteros, es claro que existe un ﬂujo 
 ### Algoritmo
 <!-- from 04_Flujos2Greedy_2023_v2_HIGHEXT.md -->
 
-\
-![](./imgs/04_Flujos2Greedy_2023_v2/21a.png)
-
-$f({\overline{{x y}}})=0{\sqrt{x y}}\in E$
 
 
 
-Comenzar con f = 0 (es decir,
 
-Buscar un camino dirigido s = x0, x1, ..., xr = t, con
-
-\
-![](./imgs/04_Flujos2Greedy_2023_v2/21b.png)
-
-$x_{i}{\overline{{x_{i+1}}}}\in E$
-
-
-
-tal que
-
-\
-![](./imgs/04_Flujos2Greedy_2023_v2/21c.png)
-
-$f(X_{i}\overline{{{X_{i+1}}}})\,<\,G(X_{i}\overline{{{X_{i+1}}}}^{*})$
-
-
-
-para todo
-$\in$  i = 0, ..., r  $-$  1.
-
-(llamaremos a un tal camino un camino dirigido “no saturado” .)
-
-Calcular
-
-\
-![](./imgs/04_Flujos2Greedy_2023_v2/21d.png)
-
-$\varepsilon=\operatorname*{min}\{C(x_{i}\overline{{{\chi_{i+1}}}})-f(x_{i}X_{i+1})\}.$
-
-
-
-Aumentar f a lo largo del camino de 2. en  $\epsilon$ , como se explicó antes.
-
-Repetir 2 hasta que no se puedan hallar mas caminos con esas condiciones.
+1. Comenzar con f = 0 (es decir, $f({\overline{{x y}}})=0 ~~ \forall{\overline{x y}}\in E$)
+2. Buscar un camino dirigido $s = x_0, x_1, ..., x_r = t$, con
+${\overline{x_{i}{x_{i+1}}}}\in E$
+tal que $f(\overline{x_{i}{x_{i+1}}})\,<\,c(\overline{x_{i}{x_{i+1}}})$ para todo $\in$  i = 0, ..., r  $-$  1. 
+3. (llamaremos a un tal camino un camino dirigido “no saturado” .)
+4. Calcular $\varepsilon=\operatorname*{min}\{c(\overline{x_{i}{x_{i+1}}})- f(\overline{x_{i}{x_{i+1}}}) \}.$
+5. Aumentar f a lo largo del camino de 2. en  $\epsilon$ , como se explicó antes.
+6. Repetir 2 hasta que no se puedan hallar mas caminos con esas condiciones.
 
 
 ### Conclusiones sobre Greedy
@@ -932,40 +883,15 @@ la complejidad total de Greedy es O(m2).
 
 ### idea
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
-
-\
-![](./imgs/05_FF2023_2_2023_v2/9a.png)
-
+en vez de limitar la busqueda a
+$y\in\Gamma^{+}(x)$
+con
 $f\bigl(\overline{{{\,x y\,}}}\bigr)\,<\,c\bigl(\overline{{{\,x y\,}}}\bigr)$
 
-
-
-en vez de limitar la busqueda a
-
-\
-![](./imgs/05_FF2023_2_2023_v2/9b.png)
-
-$y\in\Gamma^{+}(x)$
-
-
-
-con
-
 permiten ademas buscar
-
-\
-![](./imgs/05_FF2023_2_2023_v2/9c.png)
-
 $y\in\Gamma^{-}(X)$
-
-
-
 con
-
-\
-![](./imgs/05_FF2023_2_2023_v2/9d.png)
-
-$t{\bigl(}{\overline{{y x}}}{\bigr)}>0$
+$f{\bigl(}{\overline{{y x}}}{\bigr)}>0$
 
 
 
@@ -973,101 +899,53 @@ $t{\bigl(}{\overline{{y x}}}{\bigr)}>0$
 ### Camino aumentante
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
 
+#### Definicion
 Un camino aumentante (o f-camino aumentante si necesitamos especiﬁcar f) o camino de Ford-Fulkerson, es una sucesión de vértices x0, x1, ...., xr tales que:
 
 x0 = s, xr = t.
+
 Para cada i = 0, ..., r  $-$  1 ocurre una de las dos cosas siguientes:
 
-\
-![](./imgs/05_FF2023_2_2023_v2/10a.png)
+1. $\overline{x_{i}{{x_{i+1}}}}\in E\;y\;f(\overline{x_{i}{{x_{i+1}}}})<c(\overline{x_{i}{{x_{i+1}}}})$
+2. $\overline{x_{i+1}x_i} \in E ~~y~~ f(\overline{x_{i+1}x_i}) > 0$
 
-$x_{i}\overline{{{x_{i+1}}}}\in E\;y\;f(x_{i}\overline{{{x_{i+1}}}})<G(x_{i}\overline{{{x_{i+1}}}})$
-
-
-
-1
-
-\
-![](./imgs/05_FF2023_2_2023_v2/10b.png)
-
-$\chi_{i\mp1}^{\overline{{{\varepsilon}}}\mp1}\chi_{i}\in E\;\ y\;f(\chi_{i\mp1}^{\overline{{{\varepsilon}}}\mp1}\chi_{i})>0.$
-
-
-
-2
-
-Si en vez de comenzar en s y terminar t el camino es como arriba pero con x0 = x,xr = z diremos que es un camino aumentante
+Si en vez de comenzar en s y terminar t el camino es como arriba pero con $x_0 = x$ , $x_r = z$ diremos que es un camino aumentante
 **desde x a z**
 
 
-#### Lados forward y backward
+#### Lados forward 
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
 \
 
 A los lados en 1) los llamaremos “lados de tipo I” o
 **“lados forward”**
 
+$\overline{x_{i}{{x_{i+1}}}}\in E\;y\;f(\overline{x_{i}{{x_{i+1}}}})<c(\overline{x_{i}{{x_{i+1}}}})$
+
+#### Lados backward 
+\
 A los lados en 2) los llamaremos “lados de tipo II” o
 **“lados backward”**
+
+$\overline{x_{i+1}x_i} \in E ~~y~~ f(\overline{x_{i+1}x_i}) > 0$
+
+\newpage
 
 
 ### Algoritmo de Ford-Fulkerson
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
 
-\
-![](./imgs/05_FF2023_2_2023_v2/12a.png)
 
-$f({\overline{{x y}}})=0{\forall}{\overline{{x y}}}\in E$
-
-
-
-Comenzar con f = 0 (es decir,
-
-Buscar un f-camino aumentante s = x0, x1, ..., xr = t.
-
-Deﬁnir  $\epsilon$ i de la siguiente manera:
-
-\
-![](./imgs/05_FF2023_2_2023_v2/12b.png)
-
-$\varepsilon_{i}=\,c(x_{i}\overline{{{x_{i+1}}}})-\,f(\overline{{{x_{i X}}}}_{i+1})$
-
-
-
-en los lados forward.
-
-\
-![](./imgs/05_FF2023_2_2023_v2/12c.png)
-
-$\varepsilon_{i}=f(x_{i+1}^{\quad\eta}x_{i})$
-
-
-
-en los lados backward.
-
-Calcular  $\epsilon$  = min{ $\epsilon$ i}.
-
-Cambiar f a lo largo del camino de [2] en  $\epsilon$ , de la siguiente forma:
-
-\
-![](./imgs/05_FF2023_2_2023_v2/12d.png)
-
-$f(x_{i}\overline{{{x_{i+1}}}})+=\varepsilon$
-
-
-
-en los lados forward.
-
-\
-![](./imgs/05_FF2023_2_2023_v2/12e.png)
-
-$f(x_{i+1}^{\overline{{{\ldots}}}}X_{i})-\underline{{{\varepsilon}}}$
-
-
-
-en los lados backwards.
-
-Repetir [2] hasta que no se puedan hallar mas caminos aumentantes.
+#. Comenzar con f = 0 (es decir, $f({\overline{{x y}}})=0{\forall}{\overline{{x y}}}\in E$)
+#. Buscar un f-camino aumentante s = x0, x1, ..., xr = t.
+#. Deﬁnir  $\varepsilon_i$ de la siguiente manera:
+    - $\varepsilon_i = c( \overline{x_ix_{i+1}}) - f( \overline{x_ix_{i+1}})$ en los lados forward.
+    - $\varepsilon_i = f(\overline{x_{i+1}x_i})$ en los lados backward.
+#. Calcular  $\varepsilon$  = min{ $\varepsilon_i$}.
+#. Cambiar f a lo largo del camino de [2] en  $\varepsilon$ , de la siguiente forma:
+    - $f(\overline{x_ix_{i+1}})+ = \varepsilon$ en los lados forward
+    - $f(\overline{x_{i+1}x_i})- = \varepsilon$ en los lados backward
+#. Repetir [2] hasta que no se puedan hallar mas caminos aumentantes.
 
 
 ### FordFulkerson mantiene “ﬂujicidad”
@@ -1089,10 +967,6 @@ NO ES polinomial:
 ### Teorema
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
 
-\
-![](./imgs/05_FF2023_2_2023_v2/44a.png)
-
-$V(f)=f({\bf S},\overline{{{\bf S}}})-f(\overline{{{\bf S}}},{\bf S})$
 
 
 
@@ -1101,6 +975,7 @@ $V(f)=f({\bf S},\overline{{{\bf S}}})-f(\overline{{{\bf S}}},{\bf S})$
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
 \
 Si f es un ﬂujo y S es un corte, entonces
+$v(f)=f({\bf S},\overline{{{\bf S}}})-f(\overline{{{\bf S}}},{\bf S})$
 
 
 #### B
@@ -1114,9 +989,9 @@ El valor de todo ﬂujo es menor o igual que la capacidad de todo corte.
 \
 Si f es un ﬂujo, las siguientes aﬁrmaciones son equivalentes:
 
-1 Existe un corte S tal que v(f) = cap(S).
-2 f es maximal.
-3 No existen f-caminos aumentantes.
+1. Existe un corte S tal que v(f) = cap(S).
+2. f es maximal.
+3. No existen f-caminos aumentantes.
 
 
 ### Corolario
@@ -1129,27 +1004,26 @@ Si el algoritmo de Ford-Fulkerson termina, termina con un ﬂujo maximal
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
 
 
-### Teorema de la integralidad.
+### Definicion
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
 
 En un network con capacidades enteras, todo ﬂujo entero maximal es un ﬂujo maximal.
 
 
-### Teorema
+### Teorema FF siempre termina
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
+En un network donde todas las capacidades sean enteros, Ford-Fulkerson siempre termina y el ﬂujo maximal resultante es un ﬂujo entero.
+
 ## Ford-Fulkerson con DFS
 <!-- from 08_EK2021_v2_HIGHEXT.md -->
+### Algoritmo
 
-1 Creamos una pila con s.
-
-2 Si la pila es vacia, terminamos, no hay camino. Si no es vacia,
-tomamos x =el primer elemento de la pila y buscamos algún vécino de x que satisfaga las condiciones de Ford-Fulkerson.
-
-3 Si no hay, sacamos a x de la pila y repetimos 2).
-4 Si hay tal vécino, tomamos z uno de ellos.
-5 Si z = t encontramos nuestro camino.
-
-6 Si no, agregamos z a la pila y repetimos 2).
+1. Creamos una pila con s.
+2. Si la pila es vacia, terminamos, no hay camino. Si no es vacia, tomamos x =el primer elemento de la pila y buscamos algún vécino de x que satisfaga las condiciones de Ford-Fulkerson.
+3. Si no hay, sacamos a x de la pila y repetimos 2).
+4. Si hay tal vécino, tomamos z uno de ellos.
+5. Si z = t encontramos nuestro camino.
+6. Si no, agregamos z a la pila y repetimos 2).
 
 
 ### ventaja
@@ -1201,60 +1075,19 @@ La complejidad del algoritmo de Edmonds-Karp es O(nm2)
 #### Deﬁnición
 <!-- from 09_EK2021complejidad_v2_HIGHEXT.md -->
 \
-
-\
-![](./imgs/09_EK2021complejidad_v2/6a.png)
-
-$\overline{{\chi y}}$
-
-
-
-Diremos que un llado
+Diremos que un lado $\overline{xy}$
 **se vuelve crítico**
-durante la construcción de uno de los ﬂujos intermedios (digamos, fk+1) si para la construcción de
+durante la construcción de uno de los ﬂujos intermedios (digamos, $f_{k+1}$) si para la construcción de
+$f_{k+1}$ pasa una de las dos cosas siguientes:
 
-\
-![](./imgs/09_EK2021complejidad_v2/6b.png)
-
-$\textstyle\left.f_{k+1}\right\}$
-
-
-
-pasa una de las dos cosas siguientes:
-
-1 Se usa el lado en forma forward, saturandolo (es decir
-
-\
-![](./imgs/09_EK2021complejidad_v2/6c.png)
-
+1. Se usa el lado en forma forward, saturandolo (es decir
 $f_{k}({\overline{{x y}}})<c({\overline{{x y}}})$
-
-
-\
-![](./imgs/09_EK2021complejidad_v2/6d.png)
-
-$f_{k+1}({\overline{{x y}}})=G({\overline{{x y}}})$
-
-
-
 pero luego
-
-2 O se usa el lado en forma backward, vaciandolo (es decir
-
-\
-![](./imgs/09_EK2021complejidad_v2/6e.png)
-
+$f_{k+1}({\overline{{x y}}})=c({\overline{{x y}}})$
+2. O se usa el lado en forma backward, vaciandolo (es decir
 $f_{k}({\overline{{x y}}})>0$
-
-
-\
-![](./imgs/09_EK2021complejidad_v2/6f.png)
-
-$f_{k+1}({\overline{{\chi y}}})=0$
-
-
-
 pero
+$f_{k+1}({\overline{{x y}}})=0$
 
 
 ### distancias
@@ -1275,63 +1108,39 @@ como la longitud del menor f-camino aumentante entre x y z, si es que existe tal
 \
 Dado un vértice x denotamos
 
-\
-![](./imgs/09_EK2021complejidad_v2/8a.png)
-
-$Q_{k}(X)=Q_{t_{k}}(s,X)$
-
-
-
+$$d_k(x) = d_{f_k}(s,x)$$
 y
+$$b_k(x) = d_{f_k}(x,t)$$
 
-\
-![](./imgs/09_EK2021complejidad_v2/8b.png)
-
-$b_{k}(x)=Q_{\ell_{k}}(x,t).$
-
-
-
-
-#### Es decir,
 <!-- from 09_EK2021complejidad_v2_HIGHEXT.md -->
 \
 dk(x) es la longitud del menor fk-camino aumentante entre s y x y bk(x) es la longitud del menor fk-camino aumentante entre x y t.
 
-### Deﬁnición
+### Vecino FF
+#### Deﬁnición
+\
 <!-- from 09_EK2021complejidad_v2_HIGHEXT.md -->
 Dado un ﬂujo f y un vértice x, diremos que un vértice z es un vécino fFF de x si pasa alguna de las siguientes condiciones:
+$$\overline{xz} \in E \text{ y } f(\overline{xz}) < c(\overline{xz})$$
+o:
+$$\overline{xz} \in E \text{ y } f(\overline{zx}) > 0$$
 
+
+#### Observación trivial:
 \
-![](./imgs/09_EK2021complejidad_v2/10a.png)
-
-$\overline{{{\chi Z}}}\subseteq E\ y\ f(\overrightarrow{\chi Z})<G(\overrightarrow{\chi Z})\emptyset;$
-
-
-\
-![](./imgs/09_EK2021complejidad_v2/10b.png)
-
-${\overline{{\mathbb{Z}X}}}\in E\cup f({\overline{{\mathbb{Z}X}}})>0.$
-
-
-
-
-### Observación trivial:
 <!-- from 09_EK2021complejidad_v2_HIGHEXT.md -->
-Si z es un fkFF vécino de x, entonces dk(z)  $\leq$  dk(x) + 1
+Si z es un $f_k$FF vécino de x, entonces dk(z)  $\leq$  dk(x) + 1
 
 
 ### Lema de las distancias
 <!-- from 09_EK2021complejidad_v2_HIGHEXT.md -->
 Las distancias deﬁnidas anteriormente no disminuyen a medida que k crece.
 
-\
-![](./imgs/09_EK2021complejidad_v2/13a.png)
-
-$d_{k}(x)\leq d_{k\pm1}(x)\,y\,b_{k}(x)\leq b_{k\pm1}(X)\forall x$
-
-
-
 Es decir,
+$d_{k}(x)\leq d_{k+1}(x)\,y\,b_{k}(x)\leq b_{k+1}(x)\forall x$
+
+
+
 
 
 ## Existencia de ﬂujos maximales
@@ -1373,15 +1182,8 @@ los lados siguen pudiendo des-saturarse, es sólo en el network auxiliar que no 
 \
 Llamaremos a un ﬂujo en un network
 si todo camino DIRIGIDO desde s a t tiene al menos un lado
-
-\
-![](./imgs/10_Dinic2021S_v2/16a.png)
-
-$c(\overline{{x y}})=t(\overline{{x y}})$
-
-
-
 saturado. (es decir con
+$c(\overline{{x y}})=f(\overline{{x y}})$)
 
 En otras palabras, si cuando queremos usar Greedy en el network, no llegamos a t.
 
@@ -1410,14 +1212,8 @@ En otras palabras, si cuando queremos usar Greedy en el network, no llegamos a t
 \
 Un Network por niveles es un network tal que el conjunto de vértices esta dividido en subconjuntos Vi (los “niveles”) tales que sólo existen lados entre un nivel y el siguiente.
 
-\
-![](./imgs/10_Dinic2021S_v2/21a.png)
-
-$x\overline{{{y}}}\in E\Rightarrow\exists i:x\in V_{i},\;y\in V_{i+1}$
-
-
-
 Es decir,
+$\overline{{{xy}}}\in E\Rightarrow\exists i:x\in V_{i},\;y\in V_{i+1}$
 
 
 ## Network auxiliar,
@@ -1426,113 +1222,40 @@ Es decir,
 ### vértices
 <!-- from 10_Dinic2021S_v2_HIGHEXT.md -->
 
-\
-![](./imgs/10_Dinic2021S_v2/22a.png)
-
-$V=\textstyle0_{i=0}^{r}V_{i}$
-
-
-
 el conjunto de vértices es
+$V=\cup_{i=0}^{r}V_{i}$
 donde los Vi son:
 
-Sea r = df(s, t) donde df es la función deﬁnida en la prueba de Edmonds-Karp.
-
-Es decir, r es la distancia entre s y t usando caminos aumentantes.
-
-Para i = 0, 1, ..., r  $-$  1, deﬁnimos Vi = {x : df(s, x) = i}.
-
-Observar que entonces V0 = {s}.
+- Sea r = df(s, t) donde df es la función deﬁnida en la prueba de Edmonds-Karp.
+    - Es decir, r es la distancia entre s y t usando caminos aumentantes.
+- Para i = 0, 1, ..., r  $-$  1, deﬁnimos Vi = {x : df(s, x) = i}.
+    - Observar que entonces V0 = {s}.
 
 Deﬁnimos Vr = {t}
 
-\
-![](./imgs/10_Dinic2021S_v2/23a.png)
-
-$\overline{{\chi y}}$
 
 
 
 
 ### Lados y capacidades:
 <!-- from 10_Dinic2021S_v2_HIGHEXT.md -->
-es un lado del network auxiliar si:
+$\overline{{xy}}$ es un lado del network auxiliar si:
 
-x  $\in$  Vi, y  $\in$  Vi+1
-y:
+- x  $\in$  Vi, y  $\in$  Vi+1
+- y:
+    1. $\overline{{x y}}$ es un lado del network original con $f({\overline{{x y}}})<c({\overline{{x y}}})$
+    o:
+    2. $\overline{yx}$ es un lado del network original con $f({\overline{{y x}}})>0$
 
-\
-![](./imgs/10_Dinic2021S_v2/23b.png)
-
-$\overline{{x y}}$
-
-
-\
-![](./imgs/10_Dinic2021S_v2/23c.png)
-
-$f({\overline{{\chi y}}})<G({\overline{{\chi y}}})$
-
-
-
-es un lado del network original con
-
-1
-
-o:
-
-\
-![](./imgs/10_Dinic2021S_v2/23d.png)
-
-$\overline{{\sqrt{X}}}$
-
-
-\
-![](./imgs/10_Dinic2021S_v2/23e.png)
-
-$f({\overline{{y x}}})>0$
-
-
-
-es un lado del network original con
-
-2
-
-\
-![](./imgs/10_Dinic2021S_v2/23f.png)
-
-$\overline{{\chi y}}$
-
-
-
-En el caso de [1], la capacidad de
+En el caso de [1], la capacidad de $\overline{xy}$
 en el network
-
-\
-![](./imgs/10_Dinic2021S_v2/23g.png)
-
-$c({\overline{{x y}}})-f({\overline{{x y}}})$
-
-
-
 auxiliar será
+$c({\overline{{x y}}})-f({\overline{{x y}}})$
 y en el caso de [2], la
-
-\
-![](./imgs/10_Dinic2021S_v2/23h.png)
-
-$(I(x)$
-
-
-\
-![](./imgs/10_Dinic2021S_v2/23i.png)
-
-$\overline{{x y}}$
-
-
-
 capacidad del lado
+$\overline{xy}$
 en el network auxiliar será
-
+$f(\overline{{x y}})$
 
 ### Otra forma de pensar esto
 <!-- from 10_Dinic2021S_v2_HIGHEXT.md -->
@@ -1558,15 +1281,8 @@ Y luego ir construyendo una cola a partir de s al estilo Edmonds-Karp.
 Y si x agrega a z y x está en Vi, entonces z está en Vi+1.
 
 si z ya está agregado, si bien z no se
-
-\
-![](./imgs/10_Dinic2021S_v2/25a.png)
-
-$\overline{{\chi z}}$
-
-
-
 vuelve a agregar, el lado
+$\overline{{x z}}$
 si se agrega al network auxilir, siempre y cuando la distancia de z a s sea uno mas que la distancia de x a s.
 
 Si en algún momento llegamos a t, no paramos inmediatamente, pues podria haber mas lados que lleguen a t.
@@ -1574,14 +1290,7 @@ Si en algún momento llegamos a t, no paramos inmediatamente, pues podria haber 
 Pero borramos todos los vértices que ya hubieramos incluido en el mismo Vr en el cual estamos poniendo a t
 
 Y de ahi en mas no agregamos mas vértices, sólo lados entre vértices de
-
-\
-![](./imgs/10_Dinic2021S_v2/26a.png)
-
-$\scriptstyle V_{r-1}$
-
-
-
+$V_{r-1}$
 y t.
 
 
@@ -1614,15 +1323,8 @@ Esa información de que es inútil seguir buscando por x
 **no deberiamos perderla**
 y hay que “guardarla” para futuras corridas de DFS.
 La forma que tiene Ever de “guardar”esa información es simplemente borrar x, o bien, si hacemos backtrack desde x a z,
-
-\
-![](./imgs/10_DinitzvsDinicEven_v2/11a.png)
-
-$\overline{{Z\chi}}$
-
-
-
 borrar el lado
+$\overline{{zx}}$
 
 
 ## Diferencia entre la version rusa y la occidental de Dinitz
