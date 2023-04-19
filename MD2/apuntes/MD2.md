@@ -594,10 +594,10 @@ $\chi(G) \ge 3$ si y solo si existe un ciclo impar en G
 Un Grafo dirigido es un par G = (V, E) donde V es un conjunto cualquiera (ﬁnito para nosotros) y E  $\subseteq$  V  $\times$  V
 
 
-#### diferencia con un grafo no dirigido
+### diferencia con un grafo no dirigido
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
 \
-E  $\subseteq$  V  $\times$  V
+La diferencia con un grafo no dirigido es E  $\subseteq$  V  $\times$  V
 
 ahora los lados son pares ordenados en vez de conjuntos.
 
@@ -606,40 +606,24 @@ no es lo mismo (x, y) que (y, x)
 
 ### Notación:
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
-
-\
-![](./imgs/03_flujos2021_v2/8a.png)
-
-${\overline{{\chi y}}}.$
-
-
-
 Denotaremos el lado (x, y) como
+${\overline{{xy}}}.$
 
 
 ### Vecinos
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
 
+#### Diferencia con grafos no dirigidos
+\
 Pero ahora como podemos tener lados tanto (x, y) como (y, x) deberiamos diferenciar entre “vécinos hacia adelante” y “vécinos hacia atras”
 
 
 #### Notación:
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
 \
-
-\
-![](./imgs/03_flujos2021_v2/9a.png)
-
 $\begin{array}{l l l}{\Gamma^{+}(x)}&{=}&{\{y\in V|\overline{{{x y}}}\in E\}}\end{array}$
 
-
-\
-![](./imgs/03_flujos2021_v2/9b.png)
-
-$\begin{array}{l l l}{\Gamma^{-}(x)}&{=}&{\{y\in V|{\overline{{y x}}}\in{\cal E}\}}\end{array}$
-
-
-
+$\begin{array}{l l l}{\Gamma^{-}(x)}&{=}&{\{y\in V|{\overline{{y x}}}\in{E}\}}\end{array}$
 
 ## Network
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
@@ -648,41 +632,19 @@ $\begin{array}{l l l}{\Gamma^{-}(x)}&{=}&{\{y\in V|{\overline{{y x}}}\in{\cal E}
 ### Deﬁnición:
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
 Un Network es un grafo dirigido con pesos positivos en los lados, es decir, un triple (V, E, c) donde (V, E) es un grafo dirigido y
-
-\
-![](./imgs/03_flujos2021_v2/11a.png)
-
 ${\boldsymbol{C}}:E\longmapsto\mathbb{R}_{>0}$
 
 
-\
-![](./imgs/03_flujos2021_v2/11b.png)
-
-$\scriptstyle c(s{\cdot}y)$
-
-
-
-En este contexto,
-se llamará la
-
-### “capacidad”
+### capacidad
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
+$c(\overline{xy})$
+en este contexto,
+se llamará la capacidad
 del lado
-
-\
-![](./imgs/03_flujos2021_v2/11c.png)
-
-${\overline{{\chi y}}}.$
-
-
-
-
-## Flujos
-<!-- from 03_flujos2021_v2_HIGHEXT.md -->
+${\overline{{xy}}}.$
 
 ### Notación para agilizar lecturas de sumatorias
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
-
 
 #### P
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
@@ -692,23 +654,10 @@ Si P es una propiedad que puede ser verdadera o falsa, [P] denota el número 1 s
 Supongamos que tenemos una variable x, y queremos sumar una función f(x) sobre todos los x que satisfagan una propiedad P(x)
 
 podemos simplemente escribir
-
-\
-![](./imgs/03_flujos2021_v2/15a.png)
-
-$\textstyle\sum_{X}f(X)[P(X)]$
-
-
+$\sum_{x}f(x)[P(x)]$
 
 o incluso
-
-\
-![](./imgs/03_flujos2021_v2/15b.png)
-
-$\sum f(X)[P(X)]$
-
-
-
+$\sum f(x)[P(x)]$
 si queda claro que sumamos sobre x.
 
 
@@ -717,10 +666,7 @@ si queda claro que sumamos sobre x.
 
 Si g es una función deﬁnida en los lados y A y B son subconjuntos de vertices, entonces g(A, B) denotará la suma:
 
-\
-![](./imgs/03_flujos2021_v2/16a.png)
-
-$g(A,B)=\sum_{x,y}[x\in A][y\in B][\overline{{{x y}}}\in E]g(\overline{{{x y}}})$
+$$g(A,B)=\sum_{x,y}[x\in A][y\in B][\overline{{{x y}}}\in E]g(\overline{{{x y}}})$$
 
 
 
@@ -730,105 +676,61 @@ $g(A,B)=\sum_{x,y}[x\in A][y\in B][\overline{{{x y}}}\in E]g(\overline{{{x y}}})
 
 Dada una función g sobre lados y un vértice x, deﬁnimos:
 
-outg(x) es todo lo que “sale” de x por medio de g.
+$out_g(x)$ es todo lo que “sale” de x por medio de g.
 
-ing(x) es todo lo que “entra” a x por medio de g.
+$in_g(x)$ es todo lo que “entra” a x por medio de g.
 
-\
-![](./imgs/03_flujos2021_v2/19a.png)
+$$out_{g}(x)=\sum_{y}[y\in\Gamma^{+}(x)]g(\overline{xy})=g(\{x\},\Gamma^{+}(x))$$
 
-$O U t_{g}(x)=\sum_{y}[y\in\Gamma^{+}(x)]g(\stackrel{\rightharpoonup}{X y})=g(\{x\},\Gamma^{+}(x))$
-
-
-\
-![](./imgs/03_flujos2021_v2/19b.png)
-
-$i n_{g}(x)=\sum_{y}[y\in\Gamma^{-}(x)]{\it g}(\overrightarrow{y x})=g(\Gamma^{-}(x),\{X\})$
+$$in_{g}(x)=\sum_{y}[y\in\Gamma^{-}(x)]{\it g}(\overline{y x})=g(\Gamma^{-}(x),\{X\})$$
 
 
 
-
+## Flujos
 ### Deﬁnición
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
-Dado un network (V, E, c), y un par de vertices s, t  $\in$  V, un  $\in$  ﬂujo de s a t es una función f : E → R con las siguientes
+Dado un network (V, E, c), y un par de vertices s, t  $\in$  V, un ﬂujo de s a t es una función f : E → R 
 
-### propiedades:
+### propiedades que debe cumplir un flujo
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
 
+#### 1) Feasability
 \
-![](./imgs/03_flujos2021_v2/20a.png)
+$0\le f(\overline{xy}) \le c(\overline{xy})\quad \forall \overline{xy} \in E$
 
-$0\le f(\overline{{{\chi y}}})\le G(\overline{{{\chi y}}})\quad\Psi\overline{{{\chi y}}}\in{\cal E}.$
-
-
-
-(“feasability”)
-
-inf(x) = outf(x)  $\forall$ x  $\in$  V  $-$  {s, t}. (“conservación”)
-
-\
-![](./imgs/03_flujos2021_v2/20b.png)
-
-$o u l t(s)\geq i n_{f}(s).$
-
-
-
-(s es productor)
-
-(t es consumidor)
-
-\
-![](./imgs/03_flujos2021_v2/20c.png)
-
-$i m_{f}(t)\geq O U t_{f}(t).$
-
-
-
-
-#### Explicación
-<!-- from 03_flujos2021_v2_HIGHEXT.md -->
-\
-
-la primera propiedad dice que no vamos a transportar una cantidad negativa de un bien
-
+Esta propiedad nos dice que no vamos a transportar una cantidad negativa de un bien
 ni vamos a tranportar por encima de la capacidad de transporte de un lado.
 
-La segunda propiedad dice que el network no tiene “pérdidas” .
-
-La tercera especiﬁca que s es un vértice donde hay una producción neta de bienes, pues produce mas de lo que consume.
-
-y la cuarta que t es un vértice donde se consumen los bienes pues consume mas de lo que produce.
-
-En algunos libros en vez de 3) se pide directamente
-
+#### 2) conservacion
 \
-![](./imgs/03_flujos2021_v2/22a.png)
+$in_f(x)$ = $out_f(x)$  $\forall$ x  $\in$  V  $-$  {s, t}. 
 
-$i m_{\ell}(s)=0$
+Esta propiedad nos dice que el network no tiene “pérdidas” .
 
-
-
-y en vez de 4) se pide
-
+#### 3) productor
 \
-![](./imgs/03_flujos2021_v2/22b.png)
+$out_f(s)\geq i n_{f}(s).$ 
 
-$o u t_{f}(t)=0.$
+Esta propiedad nos especiﬁca que s es un vértice donde hay una producción neta de bienes, pues produce mas de lo que consume.
 
+s se llama tradicionalmente la “fuente”(source)
 
+#### 4) consumidor
+\
+$in_{f}(t)\geq out_{f}(t).$ 
 
+Esta propiedad nos especifica que t es un vértice donde se consumen los bienes pues consume mas de lo que produce.
+
+t se llama tradicionalmente el “resumidero”(sink).
+
+### Vecinos del productor y consumidor
+<!-- from 03_flujos2021_v2_HIGHEXT.md -->
 en todos los ejemplos que usaremos,
-
-\
-![](./imgs/03_flujos2021_v2/22c.png)
 
 $\Gamma^{-}(s)=\Gamma^{+}(t)=\emptyset$
 
 
 
-s se llama tradicionalmente la “fuente”(source)
-
-y t el “resumidero”(sink).
 
 
 ### Valor de un ﬂujo
@@ -842,10 +744,7 @@ Dado un network (V, E, c) el
 **valor**
 de un ﬂujo f de s a t es:
 
-\
-![](./imgs/03_flujos2021_v2/24a.png)
-
-$V(f)=o U t_{f}(s)-i n_{f}(s)$
+$v(f)=out_{f}(s)-in_{f}(s)$
 
 
 
@@ -867,6 +766,8 @@ es un ﬂujo f de s a t tal que v(g)  $\leq$  v(f) para todo ﬂujo g de s a t.
 #### Propiedad
 <!-- from 03_flujos2021_v2_HIGHEXT.md -->
 \
+Propiedades 1,2 y 3 implican la 4), y $v(f) = in_f(t) - out_f(t)$
+
 
 # Flujos: Greedy.
 <!-- from 04_Flujos2Greedy_2023_v2_HIGHEXT.md -->
