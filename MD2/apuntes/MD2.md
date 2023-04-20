@@ -202,9 +202,9 @@ Un camino entre 2 vertices x,y es una sucesion de vertices
 $X_{1},...,X_{r}$
 tales que:
 
-1. $x_{1}=X$
-2. $\textstyle x_{r}=y$
-3. $x_{i}x_{i+1}\in E\ \forall i\in\{1,2,...,r-1\}$
+1) $x_{1}=X$
+2) $\textstyle x_{r}=y$
+3) $x_{i}x_{i+1}\in E\ \forall i\in\{1,2,...,r-1\}$
 
 ### Notacion
 x  $\sim$  y 
@@ -244,13 +244,13 @@ El algoritmo básico de DFS o BFS lo que hace es, dado un vértice x, encontrar 
 
 (abajo en vez de BFS puede usarse DFS)
 
-#. Tomar W =  $\varnothing$ , i = 1.
-#. Tomar un vértice cualquiera x de V.
-#. Correr BFS(x).
-#. LLamarle Ci a la componente conexa que encuentra BFS(x).
-#. Hacer W = W $\cup$  (vértices de Ci).
-#. Si W = V, return C1, C2, ..., Ci.
-#. Si no, hacer i = i + 1, tomar un vértice x $\notin$  W y repetir [3].
+1) Tomar W =  $\varnothing$ , i = 1.
+2) Tomar un vértice cualquiera x de V.
+3) Correr BFS(x).
+4) LLamarle Ci a la componente conexa que encuentra BFS(x).
+5) Hacer W = W $\cup$  (vértices de Ci).
+6) Si W = V, return C1, C2, ..., Ci.
+7) Si no, hacer i = i + 1, tomar un vértice x $\notin$  W y repetir [3].
 
 
 ## DFS y BFS
@@ -338,10 +338,10 @@ $\chi$ (G) = min{k :  $\exists$  un coloreo propio con k colores de G}
 
 Si uno dice que  $\chi$ (G) = k, por la deﬁnición misma de este número, hay que hacer dos cosas para probarlo:
 
-1. Dar un coloreo propio de G con k colores. (y obviamente probar que es propio).
+1) Dar un coloreo propio de G con k colores. (y obviamente probar que es propio).
     - Esto prueba la parte del “ $\exists$  un coloreo propio con k colores de G”
 \
-2. Probar que no existe ningún coloreo propio con k  $-$  1 colores de G.
+2) Probar que no existe ningún coloreo propio con k  $-$  1 colores de G.
     - Esto prueba que k es el mínimo.
 
 
@@ -361,8 +361,8 @@ se asume que existe un coloreo propio con k  $-$  1 colores y deduciendo cosas, 
 
 Hay 2 problemas
 
-1. Llegar al absurdo puede ser bastante diﬁcil, teniendo que contemplar varios casos, pej.
-2. Para poder hacer la prueba por contradicción, hay que asumir que existe un coloreo propio con k  $-$  1 colores.
+1) Llegar al absurdo puede ser bastante diﬁcil, teniendo que contemplar varios casos, pej.
+2) Para poder hacer la prueba por contradicción, hay que asumir que existe un coloreo propio con k  $-$  1 colores.
     - Eso signiﬁca que uds. NO TIENEN CONTROL sobre ese coloreo.
     - Sólo saben que hay uno, y deben deducir cosas sobre ese coloreo a partir de la estructura del grafo.
 
@@ -433,9 +433,9 @@ para extraer el mayor beneﬁcio posible de Greedy conviene poder llamarlo varia
 
 La idea de Greedy consiste de dos partes:
 
-1. Ir coloreando los vértices de G uno por uno, en el orden dado, manteniendo siempre el invariante que el coloreo parcial que se va obteniendo es propio.
+1) Ir coloreando los vértices de G uno por uno, en el orden dado, manteniendo siempre el invariante que el coloreo parcial que se va obteniendo es propio.
 
-2. Darle a cada vértice al momento de colorearlo el menor color posible que se le pueda dar manteniendo el invariante de que el coloreo es propio.
+2) Darle a cada vértice al momento de colorearlo el menor color posible que se le pueda dar manteniendo el invariante de que el coloreo es propio.
 
 
 ### Greedy
@@ -531,9 +531,9 @@ Un grafo se dice bipartito si  $\chi$ (G) = 2.
 
 Es decir, si G = (V, E) entonces existen X, Y  $\subseteq$  V tales que:
 
-1. V = X  $\cup$  Y.
-2. X  $\cap$  Y =  $\varnothing$
-3. wv  $\in$  E  $\Rightarrow$  (w  $\in$  X, v  $\in$  Y)  $\lor$  (w  $\in$  Y, v  $\in$  X)
+1) V = X  $\cup$  Y.
+2) X  $\cap$  Y =  $\varnothing$
+3) wv  $\in$  E  $\Rightarrow$  (w  $\in$  X, v  $\in$  Y)  $\lor$  (w  $\in$  Y, v  $\in$  X)
 
 
 ## El problema 2COLOR
@@ -554,13 +554,13 @@ Dado un grafo G, ¿es  $\chi$ (G)  $\leq$  2?
 
 #### Algoritmo
 
-1. Elegir un vértice x cualquiera.
-2. Correr BFS(x), creando un arbol.
-3. Para cada vértice z, sea N(z) el nivel de z en el arbol BFS(x).
-4. Colorear c(z) = (N(z) mod 2).
-5. Chequear si el colorario dado en [4] es propio.
-6. Si lo es, retornar “ $\chi$ (G)  $\leq$  2”
-7. Si no lo es, retornar “ $\chi$ (G) > 2”
+1) Elegir un vértice x cualquiera.
+2) Correr BFS(x), creando un arbol.
+3) Para cada vértice z, sea N(z) el nivel de z en el arbol BFS(x).
+4) Colorear c(z) = (N(z) mod 2).
+5) Chequear si el colorario dado en [4] es propio.
+6) Si lo es, retornar “ $\chi$ (G)  $\leq$  2”
+7) Si no lo es, retornar “ $\chi$ (G) > 2”
 
 
 #### Complejidad
@@ -822,14 +822,14 @@ como hay una cantidad ﬁnita de ﬂujos enteros, es claro que existe un ﬂujo 
 
 
 
-1. Comenzar con f = 0 (es decir, $f({\overline{{x y}}})=0 ~~ \forall{\overline{x y}}\in E$)
-2. Buscar un camino dirigido $s = x_0, x_1, ..., x_r = t$, con
+1) Comenzar con f = 0 (es decir, $f({\overline{{x y}}})=0 ~~ \forall{\overline{x y}}\in E$)
+2) Buscar un camino dirigido $s = x_0, x_1, ..., x_r = t$, con
 ${\overline{x_{i}{x_{i+1}}}}\in E$
-tal que $f(\overline{x_{i}{x_{i+1}}})\,<\,c(\overline{x_{i}{x_{i+1}}})$ para todo $\in$  i = 0, ..., r  $-$  1. 
-3. (llamaremos a un tal camino un camino dirigido “no saturado” .)
-4. Calcular $\varepsilon=\operatorname*{min}\{c(\overline{x_{i}{x_{i+1}}})- f(\overline{x_{i}{x_{i+1}}}) \}.$
-5. Aumentar f a lo largo del camino de 2. en  $\epsilon$ , como se explicó antes.
-6. Repetir 2 hasta que no se puedan hallar mas caminos con esas condiciones.
+tal que $f(\overline{x_{i}{x_{i+1}}})\,<\,c(\overline{x_{i}{x_{i+1}}})$ para todo $\in$  i = 0, ..., r  $-$  1) 
+3) (llamaremos a un tal camino un camino dirigido “no saturado” .)
+4) Calcular $\varepsilon=\operatorname*{min}\{c(\overline{x_{i}{x_{i+1}}})- f(\overline{x_{i}{x_{i+1}}}) \}.$
+5) Aumentar f a lo largo del camino de 2) en  $\epsilon$ , como se explicó antes.
+6) Repetir 2 hasta que no se puedan hallar mas caminos con esas condiciones.
 
 
 ### Conclusiones sobre Greedy
@@ -906,8 +906,8 @@ x0 = s, xr = t.
 
 Para cada i = 0, ..., r  $-$  1 ocurre una de las dos cosas siguientes:
 
-1. $\overline{x_{i}{{x_{i+1}}}}\in E\;y\;f(\overline{x_{i}{{x_{i+1}}}})<c(\overline{x_{i}{{x_{i+1}}}})$
-2. $\overline{x_{i+1}x_i} \in E ~~y~~ f(\overline{x_{i+1}x_i}) > 0$
+1) $\overline{x_{i}{{x_{i+1}}}}\in E\;y\;f(\overline{x_{i}{{x_{i+1}}}})<c(\overline{x_{i}{{x_{i+1}}}})$
+2) $\overline{x_{i+1}x_i} \in E ~~y~~ f(\overline{x_{i+1}x_i}) > 0$
 
 Si en vez de comenzar en s y terminar t el camino es como arriba pero con $x_0 = x$ , $x_r = z$ diremos que es un camino aumentante
 **desde x a z**
@@ -936,16 +936,16 @@ $\overline{x_{i+1}x_i} \in E ~~y~~ f(\overline{x_{i+1}x_i}) > 0$
 <!-- from 05_FF2023_2_2023_v2_HIGHEXT.md -->
 
 
-#. Comenzar con f = 0 (es decir, $f({\overline{{x y}}})=0{\forall}{\overline{{x y}}}\in E$)
-#. Buscar un f-camino aumentante s = x0, x1, ..., xr = t.
-#. Deﬁnir  $\varepsilon_i$ de la siguiente manera:
-    - $\varepsilon_i = c( \overline{x_ix_{i+1}}) - f( \overline{x_ix_{i+1}})$ en los lados forward.
-    - $\varepsilon_i = f(\overline{x_{i+1}x_i})$ en los lados backward.
-#. Calcular  $\varepsilon$  = min{ $\varepsilon_i$}.
-#. Cambiar f a lo largo del camino de [2] en  $\varepsilon$ , de la siguiente forma:
-    - $f(\overline{x_ix_{i+1}})+ = \varepsilon$ en los lados forward
-    - $f(\overline{x_{i+1}x_i})- = \varepsilon$ en los lados backward
-#. Repetir [2] hasta que no se puedan hallar mas caminos aumentantes.
+1) Comenzar con f = 0 (es decir, $f({\overline{{x y}}})=0{\forall}{\overline{{x y}}}\in E$)
+2) Buscar un f-camino aumentante s = x0, x1, ..., xr = t.
+3) Deﬁnir  $\varepsilon_i$ de la siguiente manera:
+4)  - $\varepsilon_i = c( \overline{x_ix_{i+1}}) - f( \overline{x_ix_{i+1}})$ en los lados forward.
+5)  - $\varepsilon_i = f(\overline{x_{i+1}x_i})$ en los lados backward.
+6) Calcular  $\varepsilon$  = min{ $\varepsilon_i$}.
+7) Cambiar f a lo largo del camino de [2] en  $\varepsilon$ , de la siguiente forma:
+8   - $f(\overline{x_ix_{i+1}})+ = \varepsilon$ en los lados forward
+9   - $f(\overline{x_{i+1}x_i})- = \varepsilon$ en los lados backward
+10) Repetir [2] hasta que no se puedan hallar mas caminos aumentantes.
 
 
 ### FordFulkerson mantiene “ﬂujicidad”
@@ -989,9 +989,9 @@ El valor de todo ﬂujo es menor o igual que la capacidad de todo corte.
 \
 Si f es un ﬂujo, las siguientes aﬁrmaciones son equivalentes:
 
-1. Existe un corte S tal que v(f) = cap(S).
-2. f es maximal.
-3. No existen f-caminos aumentantes.
+1) Existe un corte S tal que v(f) = cap(S).
+2) f es maximal.
+3) No existen f-caminos aumentantes.
 
 
 ### Corolario
@@ -1018,12 +1018,12 @@ En un network donde todas las capacidades sean enteros, Ford-Fulkerson siempre t
 <!-- from 08_EK2021_v2_HIGHEXT.md -->
 ### Algoritmo
 
-1. Creamos una pila con s.
-2. Si la pila es vacia, terminamos, no hay camino. Si no es vacia, tomamos x =el primer elemento de la pila y buscamos algún vécino de x que satisfaga las condiciones de Ford-Fulkerson.
-3. Si no hay, sacamos a x de la pila y repetimos 2).
-4. Si hay tal vécino, tomamos z uno de ellos.
-5. Si z = t encontramos nuestro camino.
-6. Si no, agregamos z a la pila y repetimos 2).
+1) Creamos una pila con s.
+2) Si la pila es vacia, terminamos, no hay camino. Si no es vacia, tomamos x =el primer elemento de la pila y buscamos algún vécino de x que satisfaga las condiciones de Ford-Fulkerson.
+3) Si no hay, sacamos a x de la pila y repetimos 2).
+4) Si hay tal vécino, tomamos z uno de ellos.
+5) Si z = t encontramos nuestro camino.
+6) Si no, agregamos z a la pila y repetimos 2).
 
 
 ### ventaja
@@ -1080,11 +1080,11 @@ Diremos que un lado $\overline{xy}$
 durante la construcción de uno de los ﬂujos intermedios (digamos, $f_{k+1}$) si para la construcción de
 $f_{k+1}$ pasa una de las dos cosas siguientes:
 
-1. Se usa el lado en forma forward, saturandolo (es decir
+1) Se usa el lado en forma forward, saturandolo (es decir
 $f_{k}({\overline{{x y}}})<c({\overline{{x y}}})$
 pero luego
 $f_{k+1}({\overline{{x y}}})=c({\overline{{x y}}})$
-2. O se usa el lado en forma backward, vaciandolo (es decir
+2) O se usa el lado en forma backward, vaciandolo (es decir
 $f_{k}({\overline{{x y}}})>0$
 pero
 $f_{k+1}({\overline{{x y}}})=0$
@@ -1243,9 +1243,9 @@ $\overline{{xy}}$ es un lado del network auxiliar si:
 
 - x  $\in$  Vi, y  $\in$  Vi+1
 - y:
-    1. $\overline{{x y}}$ es un lado del network original con $f({\overline{{x y}}})<c({\overline{{x y}}})$
+    1) $\overline{{x y}}$ es un lado del network original con $f({\overline{{x y}}})<c({\overline{{x y}}})$
     o:
-    2. $\overline{yx}$ es un lado del network original con $f({\overline{{y x}}})>0$
+    2) $\overline{yx}$ es un lado del network original con $f({\overline{{y x}}})>0$
 
 En el caso de [1], la capacidad de $\overline{xy}$
 en el network
