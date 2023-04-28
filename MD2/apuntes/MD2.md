@@ -801,7 +801,7 @@ Sea f ﬂujo en un network N tal que v(f) = c({s}, V). Entonces f es maximal.
 de la deﬁnición no es claro que EXISTA un ﬂujo maximal.
 
 
-### ﬂujo sea “entero”,
+### ﬂujo entero
 <!-- from 04_Flujos2Greedy_2023_v2_HIGHEXT.md -->
 es decir que las capacidades y el ﬂujo en cada lado deben ser números enteros,
 

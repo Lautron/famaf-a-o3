@@ -875,6 +875,8 @@ es que EK=FF+BFS.
 
 ### Otra cosa que tienen que hacer
 <!-- from 08_EK2021_v2_HIGHEXT.md -->
+siempre veriﬁcar que v(f) sea igual a cap(S), calculando ambos en forma independiente.
+
 ## Complejidad de Edmonds-Karp
 <!-- from 09_EK2021complejidad_v2_HIGHEXT.md -->
 
@@ -966,6 +968,8 @@ $d_{k}(x)\leq d_{k+1}(x)\,y\,b_{k}(x)\leq b_{k+1}(x)\forall x$
 Dado que hemos probado que Edmonds-Karp siempre termina, y dado que produce un ﬂujo maximal,
 
 entonces tambien hemos probado que
+en todo network siempre existe al menos un ﬂujo maximal.
+
 # El algoritmo de Dinitz
 <!-- from 10_Dinic2021S_v2_HIGHEXT.md -->
 
@@ -979,12 +983,10 @@ esta primera parte se hace, al igual que con Edmonds-Karp, con BFS, pero guardam
 ## Esquema básico de Dinitz
 <!-- from 10_Dinic2021S_v2_HIGHEXT.md -->
 
-1 Construir un network auxiliar (usando BFS).
-2 Correr Greedy con DFS en el network auxiliar hasta no poder seguir.
-
-3 Usar el ﬂujo obtenido en el network auxiliar para modiﬁcar el ﬂujo en el network original.
-
-4 Repetir [1] con el nuevo ﬂujo, hasta que, al querer construir un network auxiliar, no llegamos a t.
+1. Construir un network auxiliar (usando BFS).
+2. Correr Greedy con DFS en el network auxiliar hasta no poder seguir.
+3. Usar el ﬂujo obtenido en el network auxiliar para modiﬁcar el ﬂujo en el network original.
+4. Repetir [1] con el nuevo ﬂujo, hasta que, al querer construir un network auxiliar, no llegamos a t.
 
 En el network auxiliar, como se usa Greedy, nunca se des-satura un lado.
 los lados siguen pudiendo des-saturarse, es sólo en el network auxiliar que no se des-saturan.
@@ -1008,12 +1010,10 @@ En otras palabras, si cuando queremos usar Greedy en el network, no llegamos a t
 ## Algoritmos tipo Dinic
 <!-- from 10_Dinic2021S_v2_HIGHEXT.md -->
 
-1 Construir un network auxiliar (usando BFS).
-
-2 Encontrar un ﬂujo bloqueante en el network auxiliar.
-3 Usar ese ﬂujo bloqueante del network auxiliar para modiﬁcar el ﬂujo en el network original.
-
-4 Repetir [1] con el nuevo ﬂujo, hasta que, al querer construir un network auxiliar, no llegamos a t.
+1. Construir un network auxiliar (usando BFS).
+2. Encontrar un ﬂujo bloqueante en el network auxiliar.
+3. Usar ese ﬂujo bloqueante del network auxiliar para modiﬁcar el ﬂujo en el network original.
+4. Repetir [1] con el nuevo ﬂujo, hasta que, al querer construir un network auxiliar, no llegamos a t.
 
 
 ## Layered Networks
